@@ -289,7 +289,7 @@ public enum CustomComboPreset
 
     [IconsCombo([NIN.Kassatsu, UTL.ArrowLeft, NIN.TrickAttack, UTL.ArrowLeft, NIN.Assassinate])]
     [SectionCombo("Cooldown")]
-    [CustomComboInfo("Kassatsu to Trick Attack to Assassinate", "Replace Kassatsu with Trick Attack and Assassinate when on cooldown.", NIN.JobID)]
+    [CustomComboInfo("Kassatsu to Trick Attack to Assassinate", "Replace Trick Attack with Kassatsu and Assassinate when on cooldown. Prioritize Kassatsu.", NIN.JobID)]
     NinjaTrickAttackCombo = 3007,
 
     #endregion
