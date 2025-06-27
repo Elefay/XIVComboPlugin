@@ -1,5 +1,3 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
 namespace XIVCombo.Combos;
 
 internal static class NIN
@@ -28,6 +26,7 @@ internal static class NIN
         ForkedRaiju = 25777,
         FleetingRaiju = 25778,
         Dokumori = 36957,
+        KunaisBane = 36958,
         TenriJindo = 36961;
 
     public static class Buffs
@@ -76,24 +75,21 @@ internal class NinjaAeolianEdge : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == NIN.AeolianEdge)
+        if (actionID == NIN.AeolianEdge && IsEnabled(CustomComboPreset.NinjaAeolianEdgeCombo))
         {
-            if (IsEnabled(CustomComboPreset.NinjaAeolianEdgeCombo))
-            {
-                if (level >= NIN.Levels.Ninjutsu && HasEffect(NIN.Buffs.Mudra))
-                    return OriginalHook(NIN.Ninjutsu);
+            if (level >= NIN.Levels.Ninjutsu && HasEffect(NIN.Buffs.Mudra))
+                return OriginalHook(NIN.Ninjutsu);
 
-                if (level >= NIN.Levels.Raiju && HasEffect(NIN.Buffs.RaijuReady))
-                    return NIN.FleetingRaiju;
+            if (level >= NIN.Levels.Raiju && HasEffect(NIN.Buffs.RaijuReady))
+                return NIN.FleetingRaiju;
 
-                if (lastComboMove == NIN.GustSlash && level >= NIN.Levels.AeolianEdge)
-                    return NIN.AeolianEdge;
+            if (lastComboMove == NIN.GustSlash && level >= NIN.Levels.AeolianEdge)
+                return NIN.AeolianEdge;
 
-                if (lastComboMove == NIN.SpinningEdge && level >= NIN.Levels.GustSlash)
-                    return NIN.GustSlash;
+            if (lastComboMove == NIN.SpinningEdge && level >= NIN.Levels.GustSlash)
+                return NIN.GustSlash;
 
-                return NIN.SpinningEdge;
-            }
+            return NIN.SpinningEdge;
         }
 
         return actionID;
@@ -106,24 +102,21 @@ internal class NinjaArmorCrush : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == NIN.ArmorCrush)
+        if (actionID == NIN.ArmorCrush && IsEnabled(CustomComboPreset.NinjaArmorCrushCombo))
         {
-            if (IsEnabled(CustomComboPreset.NinjaArmorCrushCombo))
-            {
-                if (level >= NIN.Levels.Ninjutsu && HasEffect(NIN.Buffs.Mudra))
-                    return OriginalHook(NIN.Ninjutsu);
+            if (level >= NIN.Levels.Ninjutsu && HasEffect(NIN.Buffs.Mudra))
+                return OriginalHook(NIN.Ninjutsu);
 
-                if (level >= NIN.Levels.Raiju && HasEffect(NIN.Buffs.RaijuReady))
-                    return NIN.ForkedRaiju;
+            if (level >= NIN.Levels.Raiju && HasEffect(NIN.Buffs.RaijuReady))
+                return NIN.ForkedRaiju;
 
-                if (lastComboMove == NIN.GustSlash && level >= NIN.Levels.ArmorCrush)
-                    return NIN.ArmorCrush;
+            if (lastComboMove == NIN.GustSlash && level >= NIN.Levels.ArmorCrush)
+                return NIN.ArmorCrush;
 
-                if (lastComboMove == NIN.SpinningEdge && level >= NIN.Levels.GustSlash)
-                    return NIN.GustSlash;
+            if (lastComboMove == NIN.SpinningEdge && level >= NIN.Levels.GustSlash)
+                return NIN.GustSlash;
 
-                return NIN.SpinningEdge;
-            }
+            return NIN.SpinningEdge;
         }
 
         return actionID;
@@ -136,51 +129,18 @@ internal class NinjaHakkeMujinsatsu : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == NIN.HakkeMujinsatsu)
+        if (actionID == NIN.HakkeMujinsatsu && IsEnabled(CustomComboPreset.NinjaHakkeMujinsatsuCombo))
         {
-            if (IsEnabled(CustomComboPreset.NinjaHakkeMujinsatsuCombo))
-            {
-                if (level >= NIN.Levels.Ninjutsu && HasEffect(NIN.Buffs.Mudra))
-                    return OriginalHook(NIN.Ninjutsu);
+            if (level >= NIN.Levels.Ninjutsu && HasEffect(NIN.Buffs.Mudra))
+                return OriginalHook(NIN.Ninjutsu);
 
-                if (level >= NIN.Levels.PhantomKamaitachi && HasEffect(NIN.Buffs.PhantomKamaitachiReady))
-                    return NIN.PhantomKamaitachi;
+            if (level >= NIN.Levels.PhantomKamaitachi && HasEffect(NIN.Buffs.PhantomKamaitachiReady))
+                return NIN.PhantomKamaitachi;
 
-                if (lastComboMove == NIN.DeathBlossom && level >= NIN.Levels.HakkeMujinsatsu)
-                    return NIN.HakkeMujinsatsu;
+            if (lastComboMove == NIN.DeathBlossom && level >= NIN.Levels.HakkeMujinsatsu)
+                return NIN.HakkeMujinsatsu;
 
-                return NIN.DeathBlossom;
-            }
-        }
-
-        return actionID;
-    }
-}
-
-internal class NinjaKassatsu : CustomCombo
-{
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.NinAny;
-
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
-    {
-        if (actionID == NIN.Kassatsu)
-        {
-            if (IsEnabled(CustomComboPreset.NinjaKassatsu))
-            {
-                if (level >= NIN.Levels.Kassatsu && IsCooldownUsable(NIN.Kassatsu))
-                    return NIN.Kassatsu;
-
-                if (level >= NIN.Levels.TrickAttack && IsCooldownUsable(OriginalHook(NIN.TrickAttack)) &&
-                    ((level >= NIN.Levels.Hide && HasEffect(NIN.Buffs.Hidden)) ||
-                    (level >= NIN.Levels.Suiton && HasEffect(NIN.Buffs.ShadowWalker))))
-                    return OriginalHook(NIN.TrickAttack);
-
-                if (level >= NIN.Levels.Assassinate && IsCooldownUsable(OriginalHook(NIN.Assassinate)))
-                    return OriginalHook(NIN.Assassinate);
-
-                if (level >= NIN.Levels.TrickAttack && IsCooldownUsable(OriginalHook(NIN.TrickAttack)))
-                    return OriginalHook(NIN.TrickAttack);
-            }
+            return NIN.DeathBlossom;
         }
 
         return actionID;
@@ -193,13 +153,12 @@ internal class NinjaBhavacakra : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == NIN.Bhavacakra)
+        if (actionID == NIN.Bhavacakra && IsEnabled(CustomComboPreset.NinjaBhavacakraCombo))
         {
-            if (IsEnabled(CustomComboPreset.NinjaBhavacakra))
-            {
-                if (level >= NIN.Levels.Bunshin && IsCooldownUsable(NIN.Bunshin))
-                    return NIN.Bunshin;
-            }
+            if (level >= NIN.Levels.Bunshin && IsCooldownUsable(NIN.Bunshin))
+                return NIN.Bunshin;
+
+            return NIN.Bhavacakra;
         }
 
         return actionID;
@@ -212,13 +171,12 @@ internal class NinjaHellfrogMedium : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == NIN.HellfrogMedium)
+        if (actionID == NIN.HellfrogMedium && IsEnabled(CustomComboPreset.NinjaHellfrogMediumCombo))
         {
-            if (IsEnabled(CustomComboPreset.NinjaHellfrogMedium))
-            {
-                if (level >= NIN.Levels.Bunshin && IsCooldownUsable(NIN.Bunshin))
-                    return NIN.Bunshin;
-            }
+            if (level >= NIN.Levels.Bunshin && IsCooldownUsable(NIN.Bunshin))
+                return NIN.Bunshin;
+
+            return NIN.HellfrogMedium;
         }
 
         return actionID;
@@ -231,25 +189,56 @@ internal class NinjaMug : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == NIN.Mug || actionID == NIN.Dokumori)
+        if ((actionID == NIN.Mug || actionID == NIN.Dokumori) && IsEnabled(CustomComboPreset.NinjaMugCombo))
         {
-            if (IsEnabled(CustomComboPreset.NinjaMug))
-            {
-                if (level >= NIN.Levels.Mug && IsCooldownUsable(OriginalHook(NIN.Mug)))
-                    return OriginalHook(NIN.Mug);
+            if (level >= NIN.Levels.Mug && IsCooldownUsable(OriginalHook(NIN.Mug)))
+                return OriginalHook(NIN.Mug);
 
-                if (level >= NIN.Levels.TenChiJin && IsCooldownUsable(NIN.TenChiJin))
-                    return NIN.TenChiJin;
+            if (level >= NIN.Levels.TenChiJin && IsCooldownUsable(NIN.TenChiJin))
+                return NIN.TenChiJin;
 
-                if (level >= NIN.Levels.Meisui && IsCooldownUsable(NIN.Meisui) && HasEffect(NIN.Buffs.ShadowWalker))
-                    return NIN.Meisui;
+            if (level >= NIN.Levels.Meisui && IsCooldownUsable(NIN.Meisui) && HasEffect(NIN.Buffs.ShadowWalker))
+                return NIN.Meisui;
 
-                if (level >= NIN.Levels.TenriJindo && HasEffect(NIN.Buffs.TenriJindoReady))
-                    return OriginalHook(NIN.TenChiJin);
+            if (level >= NIN.Levels.TenriJindo && HasEffect(NIN.Buffs.TenriJindoReady))
+                return OriginalHook(NIN.TenChiJin);
 
-                if (level >= NIN.Levels.Meisui && IsCooldownUsable(NIN.Meisui))
-                    return NIN.Meisui;
-            }
+            if (level >= NIN.Levels.Meisui && IsCooldownUsable(NIN.Meisui))
+                return NIN.Meisui;
+
+            return OriginalHook(NIN.Mug);
+        }
+
+        return actionID;
+    }
+}
+
+internal class NinjaTrickAttack : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.NinAny;
+
+    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        if ((actionID == NIN.TrickAttack || actionID == NIN.KunaisBane) && IsEnabled(CustomComboPreset.NinjaTrickAttackCombo))
+        {
+            if (level >= NIN.Levels.Kassatsu && IsCooldownUsable(NIN.Kassatsu))
+                return NIN.Kassatsu;
+
+            if (level >= NIN.Levels.TrickAttack && IsCooldownUsable(OriginalHook(NIN.TrickAttack)) &&
+                ((level >= NIN.Levels.Hide && HasEffect(NIN.Buffs.Hidden)) ||
+                (level >= NIN.Levels.Suiton && HasEffect(NIN.Buffs.ShadowWalker))))
+                return OriginalHook(NIN.TrickAttack);
+
+            if (level >= NIN.Levels.Assassinate && IsCooldownUsable(OriginalHook(NIN.Assassinate)))
+                return OriginalHook(NIN.Assassinate);
+
+            if (level >= NIN.Levels.TrickAttack && IsCooldownUsable(OriginalHook(NIN.TrickAttack)))
+                return OriginalHook(NIN.TrickAttack);
+
+            if (level >= NIN.Levels.Kassatsu)
+                return NIN.Kassatsu;
+
+            return OriginalHook(NIN.TrickAttack);
         }
 
         return actionID;

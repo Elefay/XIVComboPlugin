@@ -1,4 +1,3 @@
-using System;
 using XIVCombo.Attributes;
 using XIVCombo.Combos;
 
@@ -273,25 +272,25 @@ public enum CustomComboPreset
     [CustomComboInfo("Hakke Mujinsatsu Combo", "Replace Hakke Mujinsatsu with its combo chain. Prioritize Ninjutsu and Phantom Kamaitachi.", NIN.JobID)]
     NinjaHakkeMujinsatsuCombo = 3003,
 
-    [IconsCombo([NIN.Kassatsu, UTL.ArrowLeft, NIN.TrickAttack, UTL.ArrowLeft, NIN.Assassinate])]
-    [SectionCombo("Cooldown")]
-    [CustomComboInfo("Kassatsu to Trick Attack to Assassinate", "Replace Kassatsu with Trick Attack and Assassinate when on cooldown.", NIN.JobID)]
-    NinjaKassatsu = 3004,
-
     [IconsCombo([NIN.Bunshin, UTL.ArrowLeft, NIN.Bhavacakra])]
     [SectionCombo("Cooldown")]
     [CustomComboInfo("Bhavacakra to Bunshin", "Replace Bhavacakra with Bunshin when off cooldown.", NIN.JobID)]
-    NinjaBhavacakra = 3005,
+    NinjaBhavacakraCombo = 3004,
 
     [IconsCombo([NIN.Bunshin, UTL.ArrowLeft, NIN.HellfrogMedium])]
     [SectionCombo("Cooldown")]
     [CustomComboInfo("Hellfrog Medium to Bunshin", "Replace Hellfrog Medium with Bunshin when off cooldown.", NIN.JobID)]
-    NinjaHellfrogMedium = 3006,
+    NinjaHellfrogMediumCombo = 3005,
 
     [IconsCombo([NIN.Mug, UTL.ArrowLeft, NIN.TenChiJin, UTL.ArrowLeft, NIN.Meisui, UTL.ArrowLeft, NIN.TenriJindo])]
     [SectionCombo("Cooldown")]
     [CustomComboInfo("Mug to Ten Chi Jin to Meisui", "Replace Mug with Ten Chi Jin and Meisui when on cooldown.", NIN.JobID)]
-    NinjaMug = 3007,
+    NinjaMugCombo = 3006,
+
+    [IconsCombo([NIN.Kassatsu, UTL.ArrowLeft, NIN.TrickAttack, UTL.ArrowLeft, NIN.Assassinate])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Kassatsu to Trick Attack to Assassinate", "Replace Kassatsu with Trick Attack and Assassinate when on cooldown.", NIN.JobID)]
+    NinjaTrickAttackCombo = 3007,
 
     #endregion
     // ====================================================================================
