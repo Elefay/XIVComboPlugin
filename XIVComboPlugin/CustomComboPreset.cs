@@ -258,20 +258,40 @@ public enum CustomComboPreset
     // ====================================================================================
     #region NINJA
 
-    [IconsCombo([NIN.AeolianEdge, UTL.ArrowLeft, NIN.GustSlash, UTL.ArrowLeft, NIN.SpinningEdge])]
+    [IconsCombo([NIN.Ninjutsu, UTL.ArrowLeft, NIN.FleetingRaiju, UTL.ArrowLeft, NIN.AeolianEdge, UTL.ArrowLeft, NIN.GustSlash, UTL.ArrowLeft, NIN.SpinningEdge])]
     [SectionCombo("Single Target")]
-    [CustomComboInfo("Aeolian Edge Combo", "Replace Aeolian Edge with its combo chain.", NIN.JobID)]
-    NinjaAeolianEdgeCombo = 3002,
+    [CustomComboInfo("Aeolian Edge Combo", "Replace Aeolian Edge with its combo chain. Prioritize Ninjutsu and Fleeting Raiju.", NIN.JobID)]
+    NinjaAeolianEdgeCombo = 3001,
 
-    [IconsCombo([NIN.ArmorCrush, UTL.ArrowLeft, NIN.GustSlash, UTL.ArrowLeft, NIN.SpinningEdge])]
+    [IconsCombo([NIN.Ninjutsu, UTL.ArrowLeft, NIN.ForkedRaiju, UTL.ArrowLeft, NIN.ArmorCrush, UTL.ArrowLeft, NIN.GustSlash, UTL.ArrowLeft, NIN.SpinningEdge])]
     [SectionCombo("Single Target")]
-    [CustomComboInfo("Armor Crush Combo", "Replace Armor Crush with its combo chain.", NIN.JobID)]
-    NinjaArmorCrushCombo = 3001,
+    [CustomComboInfo("Armor Crush Combo", "Replace Armor Crush with its combo chain. Prioritize Ninjutsu and Forked Raiju.", NIN.JobID)]
+    NinjaArmorCrushCombo = 3002,
 
-    [IconsCombo([NIN.HakkeMujinsatsu, UTL.ArrowLeft, NIN.DeathBlossom])]
+    [IconsCombo([NIN.Ninjutsu, UTL.ArrowLeft, NIN.PhantomKamaitachi, UTL.ArrowLeft, NIN.HakkeMujinsatsu, UTL.ArrowLeft, NIN.DeathBlossom])]
     [SectionCombo("Area of Effect")]
-    [CustomComboInfo("Hakke Mujinsatsu Combo", "Replace Hakke Mujinsatsu with its combo chain.", NIN.JobID)]
+    [CustomComboInfo("Hakke Mujinsatsu Combo", "Replace Hakke Mujinsatsu with its combo chain. Prioritize Ninjutsu and Phantom Kamaitachi.", NIN.JobID)]
     NinjaHakkeMujinsatsuCombo = 3003,
+
+    [IconsCombo([NIN.Kassatsu, UTL.ArrowLeft, NIN.TrickAttack, UTL.ArrowLeft, NIN.Assassinate])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Kassatsu to Trick Attack to Assassinate", "Replace Kassatsu with Trick Attack and Assassinate when on cooldown.", NIN.JobID)]
+    NinjaKassatsu = 3004,
+
+    [IconsCombo([NIN.Bunshin, UTL.ArrowLeft, NIN.Bhavacakra])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Bhavacakra to Bunshin", "Replace Bhavacakra with Bunshin when off cooldown.", NIN.JobID)]
+    NinjaBhavacakra = 3005,
+
+    [IconsCombo([NIN.Bunshin, UTL.ArrowLeft, NIN.HellfrogMedium])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Hellfrog Medium to Bunshin", "Replace Hellfrog Medium with Bunshin when off cooldown.", NIN.JobID)]
+    NinjaHellfrogMedium = 3006,
+
+    [IconsCombo([NIN.Mug, UTL.ArrowLeft, NIN.TenChiJin, UTL.ArrowLeft, NIN.Meisui, UTL.ArrowLeft, NIN.TenriJindo])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Mug to Ten Chi Jin to Meisui", "Replace Mug with Ten Chi Jin and Meisui when on cooldown.", NIN.JobID)]
+    NinjaMug = 3007,
 
     #endregion
     // ====================================================================================
