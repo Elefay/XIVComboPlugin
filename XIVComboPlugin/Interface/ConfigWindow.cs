@@ -131,12 +131,12 @@ public class ConfigWindow : Window
                             {
                                 if (ImGui.BeginTable("TabButtonsTable", 1, ImGuiTableFlags.None, new System.Numerics.Vector2(36f * scale, 36f * scale), 4f * scale))
                                 {
-                                    if ((Service.Configuration.CurrentJobTab == "Adventurer"))
-                                        Service.Configuration.CurrentJobTab = "Paladin";
+                                    if (Service.Configuration.CurrentJobTab is not ("Gunbreaker" or "Sage" or "Ninja" or "Bard" or "Red Mage" or "Disciples of the Land"))
+                                        Service.Configuration.CurrentJobTab = "Gunbreaker";
 
                                     foreach (var jobName in this.groupedPresets.Keys)
                                     {
-                                        if (jobName is not "Adventurer")
+                                        if (jobName is "Gunbreaker" or "Sage" or "Ninja" or "Bard" or "Red Mage" or "Disciples of the Land")
                                         {
                                             ImGui.TableNextRow();
                                             ImGui.TableNextColumn();
@@ -197,7 +197,7 @@ public class ConfigWindow : Window
 
 							#endregion
 
-							if (Service.Configuration.CurrentJobTab != "Adventurer")
+							if (Service.Configuration.CurrentJobTab is "Gunbreaker" or "Sage" or "Ninja" or "Bard" or "Red Mage" or "Disciples of the Land")
 							{
 								ImGui.BeginChild("scrolling", new Vector2(0, -1), true);
 

@@ -1,13 +1,11 @@
-﻿using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVCombo.Combos;
+﻿namespace XIVCombo.Combos;
 
 internal static class BLU
 {
     public const byte JobID = 36;
 
     public const uint
-        AngelWhisper = 18317;
+        Placeholder = 0;
 
     public static class Buffs
     {
@@ -24,6 +22,6 @@ internal static class BLU
     public static class Levels
     {
         public const byte
-            AngelWhisper = 1;
+            Placeholder = 0;
     }
 }

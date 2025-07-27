@@ -11,7 +11,7 @@ namespace XIVCombo;
 public enum CustomComboPreset
 {
     // ====================================================================================
-    #region Misc
+    #region MISC
 
     [CustomComboInfo("Any", "This should not be displayed. This always returns true when used with IsEnabled.", ADV.JobID)]
     AdvAny = 0,
@@ -96,19 +96,9 @@ public enum CustomComboPreset
     // ====================================================================================
     #region ASTROLOGIAN
 
-    [SectionCombo("Draw features")]
-    [IconsCombo([AST.Play1, AST.Play2, AST.Play3, AST.MinorArcanaDT, UTL.ArrowLeft, AST.AstralDraw, AST.UmbralDraw])]
-    [CustomComboInfo("Play to Astral/Umbral Draw", "Replace Play I / II / III & Minor Arcana with with Astral/Umbral Draw when no card is drawn and you can draw.", AST.JobID)]
-    AstrologianPlayDrawFeature = 3323,
-
     #endregion
     // ====================================================================================
     #region BLACK MAGE
-
-    [IconsCombo([BLM.Fire4, BLM.Flare, UTL.Cycle, BLM.Blizzard4, BLM.Freeze])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Enochian Feature", "Replace Fire 4/Flare and Blizzard 4/Freeze with whichever action you can currently use.", BLM.JobID)]
-    BlackEnochianFeature = 2501,
 
     #endregion
     // ====================================================================================
@@ -128,58 +118,13 @@ public enum CustomComboPreset
     // ====================================================================================
     #region DANCER
 
-    [IconsCombo([DNC.Windmill, UTL.ArrowLeft, DNC.RisingWindmill, UTL.Blank, DNC.Bladeshower, UTL.ArrowLeft, DNC.Bloodshower])]
-    [SectionCombo("Area of Effect")]
-    [CustomComboInfo("AoE to Procs", "Replace Windmill and Bladeshower with Rising Windmill and Bloodshower respectively when available.", DNC.JobID)]
-    DancerAoeProcs = 3812,
-
-    [IconsCombo([DNC.FanDance1, DNC.FanDance2, UTL.ArrowLeft, DNC.FanDance3, UTL.Blank, DNC.Buffs.ThreefoldFanDance, UTL.Checkmark])]
-    [SectionCombo("Fan features")]
-    [CustomComboInfo("Fan Dance 3 Feature", "Replace Fan Dance and Fan Dance 2 with Fan Dance 3 when available.", DNC.JobID)]
-    DancerFanDance3Feature = 3801,
-
-    [IconsCombo([DNC.Flourish, UTL.ArrowLeft, DNC.FanDance4, UTL.Blank, DNC.Buffs.FourfoldFanDance, UTL.Checkmark])]
-    [SectionCombo("Fan features")]
-    [CustomComboInfo("Flourishing Fan Dance 4", "Replace Flourish with Fan Dance 4 when available.", DNC.JobID)]
-    DancerFlourishFan4Feature = 3808,
-
-    [IconsCombo([DNC.StandardStep, UTL.ArrowLeft, DNC.LastDance, UTL.Blank, DNC.Buffs.LastDanceReady, UTL.Checkmark])]
-    [SectionCombo("Dances features")]
-    [CustomComboInfo("Last Dance Feature", "Replace Standard Step by Last Dance if available.", DNC.JobID)]
-    DancerLastDanceFeature = 3813,
-
     #endregion
     // ====================================================================================
     #region DARK KNIGHT
 
-    [SectionCombo("Single Target")]
-    [IconsCombo([DRK.Souleater, UTL.ArrowLeft, DRK.SyphonStrike, UTL.ArrowLeft, DRK.HardSlash])]
-    [CustomComboInfo("Souleater Combo", "Replace Souleater with its combo chain.", DRK.JobID)]
-    DarkSouleaterCombo = 3201,
-
-    [SectionCombo("Area of Effect")]
-    [IconsCombo([DRK.StalwartSoul, UTL.ArrowLeft, DRK.Unleash])]
-    [CustomComboInfo("Stalwart Soul Combo", "Replace Stalwart Soul with its combo chain.", DRK.JobID)]
-    DarkStalwartSoulCombo = 3202,
-
     #endregion
     // ====================================================================================
     #region DRAGOON
-
-    [IconsCombo([DRG.RaidenThrust, UTL.ArrowLeft, DRG.Drakesbane, UTL.ArrowLeft, DRG.FangAndClaw, UTL.ArrowLeft, DRG.FullThrust, UTL.ArrowLeft, DRG.VorpalThrust, UTL.ArrowLeft, DRG.TrueThrust])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Full Thrust Combo", "Replace Full Thrust with its combo chain.", DRG.JobID)]
-    DragoonFullThrustCombo = 2204,
-
-    [IconsCombo([DRG.RaidenThrust, UTL.ArrowLeft, DRG.Drakesbane, UTL.ArrowLeft, DRG.WheelingThrust, UTL.ArrowLeft, DRG.ChaosThrust, UTL.ArrowLeft, DRG.Disembowel, UTL.ArrowLeft, DRG.TrueThrust])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Chaos Thrust Combo", "Replace Chaos Thrust with its combo chain.", DRG.JobID)]
-    DragoonChaosThrustCombo = 2203,
-
-    [IconsCombo([DRG.CoerthanTorment, UTL.ArrowLeft, DRG.SonicThrust, UTL.ArrowLeft, DRG.DoomSpike])]
-    [SectionCombo("Area of Effect")]
-    [CustomComboInfo("Coerthan Torment Combo", "Replace Coerthan Torment with its combo chain.", DRG.JobID)]
-    DragoonCoerthanTormentCombo = 2202,
 
     #endregion
     // ====================================================================================
@@ -219,44 +164,9 @@ public enum CustomComboPreset
     // ====================================================================================
     #region MACHINIST
 
-    [IconsCombo([MCH.CleanShot, UTL.ArrowLeft, MCH.SplitShot, UTL.ArrowLeft, MCH.SlugShot])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("(Heated) Shot Combo", "Replace Clean Shot with its combo chain.", MCH.JobID)]
-    MachinistMainCombo = 3101,
-
-    [IconsCombo([MCH.Hypercharge, UTL.ArrowLeft, MCH.HeatBlast, UTL.Blank, MCH.Buffs.Overheat, UTL.Checkmark])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Hypercharge Blaster", "Replaces Hypercharge with Heat Blast while overheated.", MCH.JobID)]
-    MachinistHypercomboFeature = 3108,
-
-    [IconsCombo([MCH.SpreadShot, UTL.ArrowLeft, MCH.AutoCrossbow, UTL.Blank, MCH.Buffs.Overheat, UTL.Checkmark])]
-    [SectionCombo("Area of Effect")]
-    [CustomComboInfo("Spread Shot Heat", "Replace Spread Shot with Auto Crossbow while overheated.", MCH.JobID)]
-    MachinistSpreadShotFeature = 3102,
-
     #endregion
     // ====================================================================================
     #region MONK
-
-    [IconsCombo([MNK.Bootshine, UTL.ArrowLeft, MNK.DragonKick])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Opo Feature", "Replace Bootshine/Leaping Opo with Dragon Kick if you don't have any Opo's fury stack.", MNK.JobID)]
-    MonkOpoFeature = 2017,
-
-    [IconsCombo([MNK.TrueStrike, UTL.ArrowLeft, MNK.TwinSnakes])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Raptor Feature", "Replace True Strike with Twin Snakes if you don't have any Raptor's fury stack.", MNK.JobID)]
-    MonkRaptorFeature = 2018,
-
-    [IconsCombo([MNK.SnapPunch, UTL.ArrowLeft, MNK.Demolish])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Coeurl Feature", "Replace Snap Punch with Demolish if you don't have any Coeurl's fury stack.", MNK.JobID)]
-    MonkCoeurlFeature = 2019,
-
-    [IconsCombo([MNK.PerfectBalance, UTL.ArrowLeft, MNK.MasterfulBlitz, UTL.Blank, UTL.Blank, UTL.Checkmark])]
-    [SectionCombo("Masterful Blitz")]
-    [CustomComboInfo("Perfect Balance Feature", "Replace Perfect Balance with Masterful Blitz when you have 3 Beast Chakra.", MNK.JobID)]
-    MonkPerfectBalanceFeature = 2004,
 
     #endregion
     // ====================================================================================
@@ -301,100 +211,13 @@ public enum CustomComboPreset
     // ====================================================================================
     #region PALADIN
 
-    [IconsCombo([PLD.RoyalAuthority, UTL.ArrowLeft, PLD.RiotBlade, UTL.ArrowLeft, PLD.FastBlade])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Royal Authority Combo", "Replace Royal Authority/Rage of Halone with its combo chain.", PLD.JobID)]
-    PaladinRoyalAuthorityCombo = 1902,
-
-    [IconsCombo([PLD.Prominence, UTL.ArrowLeft, PLD.TotalEclipse])]
-    [SectionCombo("Area of Effect")]
-    [CustomComboInfo("Prominence Combo", "Replace Prominence with its combo chain.", PLD.JobID)]
-    PaladinProminenceCombo = 1904,
-
-    [IconsCombo([PLD.Requiescat, UTL.ArrowLeft, PLD.Confiteor, PLD.BladeOfFaith, PLD.BladeOfTruth, PLD.BladeOfValor, PLD.BladeOfHonor])]
-    [SectionCombo("Cooldowns")]
-    [CustomComboInfo("Requiescat/Imperator Confiteor", "Replace Requiescat/Imperator with Confiteor and combo chain when available, and then with Holy Spirit if there are remaining charges.", PLD.JobID)]
-    PaladinRequiescatConfiteorFeature = 1905,
-
     #endregion
     // ====================================================================================
     #region PICTOMANCER
 
-    [IconsCombo([PCT.FireRedST, UTL.ArrowLeft, PCT.BlizzardCyanST, UTL.Blank, PCT.SubstractivePalette, UTL.Cross])]
-    [SectionCombo("Substractive")]
-    [CustomComboInfo("Subtractive Single-Target Combo", "Fire in Red's combo chain is always correct even when under Substractive Palette's effect.", PCT.JobID)]
-    PictomancerSubtractiveSTCombo = 4201,
-
-    [IconsCombo([PCT.FireRedAoE, UTL.ArrowLeft, PCT.BlizzardCyanAoE, UTL.Blank, PCT.SubstractivePalette, UTL.Cross])]
-    [SectionCombo("Substractive")]
-    [CustomComboInfo("Subtractive AoE Combo", "Fire in Red II's combo chain is always correct even when under Substractive Palette's effect.", PCT.JobID)]
-    PictomancerSubtractiveAoECombo = 4202,
-
-    [IconsCombo([PCT.CreatureMotif, UTL.ArrowLeft, PCT.LivingMuse, UTL.Blank, PCT.PomMuse, PCT.WingedMuse, PCT.ClawedMuse, PCT.FangedMuse, UTL.Checkmark])]
-    [SectionCombo("Muses & Motifs")]
-    [CustomComboInfo("Creature Muse/Motif Combo", "Replace Creature Motifs with Creature Muses when the Creature Canvas is painted.", PCT.JobID)]
-    PictomancerCreatureMotifCombo = 4206,
-
-    [IconsCombo([PCT.CreatureMotif, UTL.ArrowLeft, PCT.MogOftheAges, PCT.Retribution, UTL.Blank, PCT.MogOftheAges, PCT.Retribution, UTL.Checkmark])]
-    [SectionCombo("Muses & Motifs")]
-    [ParentCombo(PictomancerCreatureMotifCombo)]
-    [CustomComboInfo("Creature Muse/Mog of the Ages Combo", "Also replace Creature Motifs with Mog of the Ages and Retribution of the Madeen when they are usable.", PCT.JobID)]
-    PictomancerCreatureMogCombo = 4207,
-
-    [IconsCombo([PCT.WeaponMotif, UTL.ArrowLeft, PCT.StrikingMuse, UTL.Blank, PCT.HammerMotif, UTL.Checkmark])]
-    [SectionCombo("Muses & Motifs")]
-    [CustomComboInfo("Weapon Muse/Motif Combo", "Replace Hammer Motif with Striking Muse when the Weapon Canvas is painted.", PCT.JobID)]
-    PictomancerWeaponMotifCombo = 4208,
-
-    [IconsCombo([PCT.HammerMotif, UTL.ArrowLeft, PCT.HammerStamp, PCT.HammerBrush, PCT.PolishingHammer, UTL.Blank, PCT.Buffs.HammerReady, UTL.Checkmark])]
-    [SectionCombo("Muses & Motifs")]
-    [CustomComboInfo("Hammer Time", "Replace Hammer Motif with Hammer Brush and its combo chain when they are usable.", PCT.JobID)]
-    PictomancerWeaponHammerCombo = 4209,
-
-    [IconsCombo([PCT.LandscapeMotif, UTL.ArrowLeft, PCT.ScenicMuse, UTL.Blank, PCT.StarryMuse, UTL.Checkmark])]
-    [SectionCombo("Muses & Motifs")]
-    [CustomComboInfo("Starry Muse/Motif Combo", "Replace Starry Sky Motif with Starry Muse when the Landscape Canvas is painted.", PCT.JobID)]
-    PictomancerLandscapeMotifCombo = 4210,
-
-    [IconsCombo([PCT.StarryMuse, UTL.ArrowLeft, PCT.StarPrism, UTL.Blank, PCT.Buffs.StarPrismReady, UTL.Checkmark])]
-    [SectionCombo("Muses & Motifs")]
-    [CustomComboInfo("Starry Muse/Star Prism Combo", "Replace Starry Muse with Star Prism when it is usable.  Also replaces Starry Sky Motif if the Starry Muse/Motif Combo is selected.", PCT.JobID)]
-    PictomancerLandscapePrismCombo = 4211,
-
-    [IconsCombo([PCT.HolyWhite, UTL.ArrowLeft, PCT.CometBlack, UTL.Blank, PCT.CometBlack, UTL.Checkmark])]
-    [SectionCombo("Holy Comet")]
-    [CustomComboInfo("Holy Comet Combo", "Replace Holy in White with Comet in Black when usable.", PCT.JobID)]
-    PictomancerHolyCometCombo = 4203,
-
     #endregion
     // ====================================================================================
     #region REAPER
-    // Currently unused: 3913, 3914, 3915, 3919, 3920, 3921, 3922, 3923, 3924, 3927, 3928, 3929, 3935, 3941, 3946
-
-    [IconsCombo([RPR.InfernalSlice, UTL.ArrowLeft, RPR.WaxingSlice, UTL.ArrowLeft, RPR.Slice])]
-    [SectionCombo("Main Combos")]
-    [CustomComboInfo("Slice Combo", "Replace Infernal Slice with its combo chain.", RPR.JobID)]
-    ReaperSliceCombo = 3901,
-
-    [IconsCombo([RPR.NightmareScythe, UTL.ArrowLeft, RPR.SpinningScythe])]
-    [SectionCombo("Main Combos")]
-    [CustomComboInfo("Scythe Combo", "Replace Nightmare Scythe with its combo chain.", RPR.JobID)]
-    ReaperScytheCombo = 3902,
-
-    [IconsCombo([RPR.Enshroud, UTL.ArrowLeft, RPR.Communio, UTL.Blank, RPR.Buffs.Enshrouded, UTL.Checkmark])]
-    [SectionCombo("Enshroud")]
-    [CustomComboInfo("Enshroud Communio Feature", "Replace Enshroud with Communio when Enshrouded.", RPR.JobID)]
-    ReaperEnshroudCommunioFeature = 3909,
-
-    [IconsCombo([RPR.ArcaneCircle, UTL.ArrowLeft, RPR.PlentifulHarvest, UTL.Blank, RPR.Buffs.ImmortalSacrifice, UTL.Checkmark])]
-    [SectionCombo("Arcane Circle")]
-    [CustomComboInfo("Arcane Harvest Feature", "Replace Arcane Circle with Plentiful Harvest when you have stacks of Immortal Sacrifice.", RPR.JobID)]
-    ReaperArcaneHarvestFeature = 3908,
-
-    [IconsCombo([RPR.HellsIngress, RPR.HellsEgress, UTL.ArrowLeft, RPR.Regress, UTL.Blank, RPR.Buffs.Threshold])]
-    [SectionCombo("Miscellaneous")]
-    [CustomComboInfo("Regress Feature", "Replace Hell's Ingress and Egress turn with Regress when Threshold is active, instead of just the opposite of the one used.", RPR.JobID)]
-    ReaperRegressFeature = 3910,
 
     #endregion
     // ====================================================================================
@@ -457,110 +280,25 @@ public enum CustomComboPreset
     // ====================================================================================
     #region SAMURAI
 
-    [IconsCombo([SAM.Yukikaze, UTL.ArrowLeft, SAM.Hakaze])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Yukikaze Combo", "Replace Yukikaze with its combo chain.", SAM.JobID)]
-    SamuraiYukikazeCombo = 3401,
-
-    [IconsCombo([SAM.Gekko, UTL.ArrowLeft, SAM.Jinpu, UTL.ArrowLeft, SAM.Hakaze])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Gekko Combo", "Replace Gekko with its combo chain.", SAM.JobID)]
-    SamuraiGekkoCombo = 3402,
-
-    [IconsCombo([SAM.Kasha, UTL.ArrowLeft, SAM.Shifu, UTL.ArrowLeft, SAM.Hakaze])]
-    [SectionCombo("Single Target")]
-    [CustomComboInfo("Kasha Combo", "Replace Kasha with its combo chain.", SAM.JobID)]
-    SamuraiKashaCombo = 3403,
-
-    [IconsCombo([SAM.Mangetsu, UTL.ArrowLeft, SAM.Fuga, SAM.Fuko])]
-    [SectionCombo("Area of Effect")]
-    [CustomComboInfo("Mangetsu Combo", "Replace Mangetsu with its own combo chain.", SAM.JobID)]
-    SamuraiMangetsuCombo = 3404,
-
-    [IconsCombo([SAM.Oka, UTL.ArrowLeft, SAM.Fuga, SAM.Fuko])]
-    [SectionCombo("Area of Effect")]
-    [CustomComboInfo("Oka Combo", "Replace Oka with its own combo chain.", SAM.JobID)]
-    SamuraiOkaCombo = 3405,
-
-    [IconsCombo([SAM.Iaijutsu, UTL.ArrowLeft, SAM.TsubameGaeshi])]
-    [SectionCombo("Iaijutsu")]
-    [CustomComboInfo("Iaijutsu to Tsubame-gaeshi", "Replace Iaijutsu with Tsubame-gaeshi when it is usable.", SAM.JobID)]
-    SamuraiIaijutsuTsubameGaeshiFeature = 3409,
-
     #endregion
     // ====================================================================================
     #region SCHOLAR
-
-    [IconsCombo([SCH.EnergyDrain, UTL.ArrowLeft, SCH.Aetherflow, UTL.Blank, UTL.Blank, UTL.Danger])]
-    [SectionCombo("Aetherflow features")]
-    [CustomComboInfo("ED Aetherflow", "Replace Energy Drain with Aetherflow when you have no more Aetherflow stacks.", SCH.JobID)]
-    ScholarEnergyDrainAetherflowFeature = 2802,
 
     #endregion
     // ====================================================================================
     #region SUMMONER
 
-    [IconsCombo([SMN.Fester, UTL.ArrowLeft, SMN.EnergyDrain, UTL.Blank, SMN.EnergyDrain, UTL.Cross])]
-    [SectionCombo("Aetherflow features")]
-    [CustomComboInfo("ED Fester/Necrosis Feature", "Replace Fester/Necrosis with Energy Drain when out of Aetherflow stacks.", SMN.JobID)]
-    SummonerEDFesterFeature = 2701,
-
-    [IconsCombo([SMN.Painflare, UTL.ArrowLeft, SMN.EnergySyphon, UTL.Blank, SMN.EnergySyphon, UTL.Cross])]
-    [SectionCombo("Aetherflow features")]
-    [CustomComboInfo("ES Painflare Feature", "Replace Painflare with Energy Syphon when out of Aetherflow stacks.", SMN.JobID)]
-    SummonerESPainflareFeature = 2702,
-
-    [IconsCombo([SMN.SummonBahamut, UTL.ArrowLeft, SMN.LuxSolaris, UTL.Blank, SMN.Buffs.LuxSolarisReady, UTL.Checkmark])]
-    [SectionCombo("Summons features")]
-    [CustomComboInfo("Summon Lux Solaris Feature", "Replace Summon Bahamut with Lux Solaris when you have Refulgent Lux ready.", SMN.JobID)]
-    SummonerSummonLuxSolarisFeature = 2717,
-
     #endregion
     // ====================================================================================
     #region VIPER
-
-    [SectionCombo("Standard Combos")]
-    [IconsCombo([VPR.SteelFangs, VPR.ReavingFangs, UTL.ArrowLeft, VPR.DeathRattle, UTL.Blank, VPR.SteelMaw, VPR.ReavingMaw, UTL.ArrowLeft, VPR.LastLash])]
-    [CustomComboInfo("Serpent's Fang Feature", "Replace Steel Fangs, Reaving Fangs, Steel Maw, and Reaving Maw with Serpent's Tail after finishing a combo.", VPR.JobID)]
-    ViperSteelTailFeature = 4101,
-
-    [SectionCombo("Reawaken")]
-    [IconsCombo([VPR.FirstGeneration, VPR.FirstLegacy, VPR.SecondGeneration, VPR.SecondLegacy, VPR.ThirdGeneration, VPR.ThirdLegacy, VPR.FourthGeneration, VPR.FourthLegacy, UTL.Blank])]
-    [CustomComboInfo("Generation Legacy Feature", "Replace the Generation skills with their respective Legacies.", VPR.JobID)]
-    ViperGenerationLegaciesFeature = 4105,
 
     #endregion
     // ====================================================================================
     #region WARRIOR
 
-    [SectionCombo("Single Target")]
-    [IconsCombo([WAR.StormsPath, UTL.ArrowLeft, WAR.Maim, UTL.ArrowLeft, WAR.HeavySwing])]
-    [CustomComboInfo("Storm's Path Combo", "Replace Storm's Path with its combo chain.", WAR.JobID)]
-    WarriorStormsPathCombo = 2101,
-
-    [SectionCombo("Single Target")]
-    [IconsCombo([WAR.StormsEye, UTL.ArrowLeft, WAR.Maim, UTL.ArrowLeft, WAR.HeavySwing])]
-    [CustomComboInfo("Storm's Eye Combo", "Replace Storms Eye with its combo chain.", WAR.JobID)]
-    WarriorStormsEyeCombo = 2102,
-
-    [SectionCombo("Area of Effect")]
-    [IconsCombo([WAR.MythrilTempest, UTL.ArrowLeft, WAR.Overpower])]
-    [CustomComboInfo("Mythril Tempest Combo", "Replace Mythril Tempest with its combo chain.", WAR.JobID)]
-    WarriorMythrilTempestCombo = 2103,
-
     #endregion
     // ====================================================================================
     #region WHITE MAGE
-
-    [SectionCombo("Afflatus Misery")]
-    [IconsCombo([WHM.AfflatusSolace, UTL.ArrowLeft, WHM.AfflatusMisery, UTL.Blank, UTL.Blank, UTL.Enemy])]
-    [CustomComboInfo("Solace into Misery", "Replace Afflatus Solace with Afflatus Misery when ready and you have an enemy target and 3 Blood Lilies.", WHM.JobID)]
-    WhiteMageSolaceMiseryFeature = 2401,
-
-    [SectionCombo("Afflatus Misery")]
-    [IconsCombo([WHM.AfflatusRapture, UTL.ArrowLeft, WHM.AfflatusMisery, UTL.Blank, UTL.Blank, UTL.Enemy])]
-    [CustomComboInfo("Rapture into Misery", "Replace Afflatus Rapture with Afflatus Misery when ready and you have an enemy target and 3 Blood Lilies.", WHM.JobID)]
-    WhiteMageRaptureMiseryFeature = 2402,
 
     #endregion
     // ====================================================================================

@@ -68,7 +68,7 @@ public class PluginConfiguration : IPluginConfiguration
     /// Gets or sets a value indicating which is the current tab.
     /// </summary>
     [JsonProperty("Tab")]
-    public string CurrentJobTab { get; set; } = "Paladin";
+    public string CurrentJobTab { get; set; } = "Gunbreaker";
 
     /// <summary>
     /// Gets or sets a value indicating whether the plugin automatically changes to the current job upon opening the GUI.
