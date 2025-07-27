@@ -8,6 +8,7 @@ using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Game.ClientState.Statuses;
 using Dalamud.Utility;
 using XIVCombo.Attributes;
+using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 
 namespace XIVCombo.Combos;
 
@@ -427,4 +428,15 @@ internal abstract partial class CustomCombo
 
         return true;
     }
+
+    /// <summary>
+    /// Checks player movement.
+    /// </summary>
+	protected static unsafe bool IsMoving
+	{
+		get
+		{
+			return AgentMap.Instance() is not null && AgentMap.Instance()->IsPlayerMoving;
+		}
+	}
 }

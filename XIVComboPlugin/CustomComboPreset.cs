@@ -413,7 +413,41 @@ public enum CustomComboPreset
     // ====================================================================================
     #region SAGE
 
-    
+    [IconsCombo([SGE.Kerachole, UTL.ArrowLeft, SGE.Ixochole, UTL.ArrowLeft, SGE.Rhizomata])]
+    [SectionCombo("Addersgall")]
+    [CustomComboInfo("Kerachole to Ixochole", "Replace Kerachole with Ixochole when on cooldown and Rhizomata when Addersgall is empty.", SGE.JobID)]
+    SageKeracholeCombo = 4001,
+
+    [IconsCombo([SGE.Taurochole, UTL.ArrowLeft, SGE.Druochole, UTL.ArrowLeft, SGE.Rhizomata])]
+    [SectionCombo("Addersgall")]
+    [CustomComboInfo("Taurochole to Druochole", "Replace Taurochole with Druochole when on cooldown and Rhizomata when Addersgall is empty.", SGE.JobID)]
+    SageTaurocholeCombo = 4002,
+
+    [IconsCombo([SGE.Toxikon, UTL.ArrowLeft, SGE.Dosis])]
+    [SectionCombo("Addersting")]
+    [CustomComboInfo("Dosis to Toxikon", "Replace Dosis with Toxikon when moving and Addersting is not empty.", SGE.JobID)]
+    SageDosisCombo = 4003,
+
+    [IconsCombo([ADV.Swiftcast, UTL.ArrowLeft, SGE.Egeiro])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Egeiro to Swiftcast", "Replace Egeiro with Swiftcast when off cooldown.", SGE.JobID)]
+    SageEgeiroCombo = 4004,
+
+    [IconsCombo([SGE.Soteria, UTL.ArrowLeft, SGE.Kardia])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Kardia to Soteria", "Replace Kardia with Soteria when off cooldown and Kardia is applied.", SGE.JobID)]
+    SageKardiaCombo = 4005,
+
+    [IconsCombo([SGE.Psyche, UTL.ArrowLeft, SGE.Phlegma])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Phlegma to Psyche", "Replace Phlegma with Psyche when off cooldown.", SGE.JobID)]
+    SagePhlegmaCombo = 4006,
+
+    [IconsCombo([SGE.Zoe, UTL.ArrowLeft, SGE.Pneuma])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Pneuma to Zoe", "Replace Pneuma with Zoe when off cooldown.", SGE.JobID)]
+    SagePneumaCombo = 4007,
+
     #endregion
     // ====================================================================================
     #region SAMURAI
