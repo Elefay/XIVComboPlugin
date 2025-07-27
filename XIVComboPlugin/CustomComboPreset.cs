@@ -566,12 +566,19 @@ public enum CustomComboPreset
     // ====================================================================================
     #region DOH
 
-    // [CustomComboInfo("Placeholder", "Placeholder.", DOH.JobID)]
-    // DohPlaceholder = 50001,
-
     #endregion
     // ====================================================================================
     #region DOL
+
+    [SectionCombo("Miscellaneous")]
+    [IconsCombo([DOL.BtnWiseToTheWorld, UTL.ArrowLeft, DOL.AgelessWords])]
+    [CustomComboInfo("Ageless Words to Wise to the World", "Replace Ageless Words with Wise to the World when available.", DOL.JobID)]
+    DOLAgelessWordsCombo = 51001,
+
+    [SectionCombo("Miscellaneous")]
+    [IconsCombo([DOL.MinWiseToTheWorld, UTL.ArrowLeft, DOL.SolidReason])]
+    [CustomComboInfo("Solid Reason to Wise to the World", "Replace Solid Reason with Wise to the World when available.", DOL.JobID)]
+    DOLSolidReasonCombo = 51002,
 
     #endregion
     // ====================================================================================
