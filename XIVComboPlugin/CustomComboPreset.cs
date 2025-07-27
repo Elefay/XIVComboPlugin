@@ -191,24 +191,29 @@ public enum CustomComboPreset
     GunbreakerSolidBarrelCombo = 3701,
 
     [SectionCombo("Single Target")]
-    [IconsCombo([GNB.Hypervelocity, UTL.ArrowLeft, GNB.BurstStrike, UTL.Blank, GNB.Buffs.ReadyToBlast, UTL.Checkmark])]
-    [CustomComboInfo("Burst Strike Continuation", "Replace Burst Strike with Continuation moves when appropriate.", GNB.JobID)]
-    GunbreakerBurstStrikeCont = 3703,
-
-    [SectionCombo("Single Target")]
-    [IconsCombo([GNB.EyeGouge, UTL.ArrowLeft, GNB.WickedTalon, UTL.ArrowLeft, GNB.AbdomenTear, UTL.ArrowLeft, GNB.SavageClaw, UTL.ArrowLeft, GNB.JugularRip, UTL.ArrowLeft, GNB.GnashingFang])]
-    [CustomComboInfo("Gnashing Fang Continuation", "Replace Gnashing Fang with Continuation moves when appropriate.", GNB.JobID)]
-    GunbreakerGnashingFangCont = 3702,
+    [IconsCombo([GNB.Continuation, UTL.ArrowLeft, GNB.GnashingFang, UTL.ArrowLeft, GNB.BurstStrike])]
+    [CustomComboInfo("Burst Strike to Gnashing Fang", "Replace Burst Strike with Gnashing Fang when off cooldown. Prioritize Continuation.", GNB.JobID)]
+    GunbreakerGnashingFangCombo = 3702,
 
     [SectionCombo("Area of Effect")]
     [IconsCombo([GNB.DemonSlaughter, UTL.ArrowLeft, GNB.DemonSlice])]
     [CustomComboInfo("Demon Slaughter Combo", "Replace Demon Slaughter with its combo chain.", GNB.JobID)]
-    GunbreakerDemonSlaughterCombo = 3705,
+    GunbreakerDemonSlaughterCombo = 3703,
 
     [SectionCombo("Area of Effect")]
-    [IconsCombo([GNB.FatedCircle, UTL.ArrowLeft, GNB.FatedBrand, UTL.Blank, GNB.Buffs.ReadyToFated, UTL.Checkmark])]
-    [CustomComboInfo("Fated Circle Continuation", "Replace Fated Circle with Continuation moves when appropriate.", GNB.JobID)]
-    GunbreakerFatedCircleCont = 3714,
+    [IconsCombo([GNB.Continuation, UTL.ArrowLeft, GNB.DoubleDown, UTL.ArrowLeft, GNB.FatedCircle])]
+    [CustomComboInfo("Fated Circle to Double Down", "Replace Fated Circle with Double Down when off cooldown. Prioritize Continuation.", GNB.JobID)]
+    GunbreakerDoubleDownCombo = 3704,
+
+    [SectionCombo("Cooldown")]
+    [IconsCombo([GNB.RoyalGuard, UTL.ArrowLeft, ADV.Provoke])]
+    [CustomComboInfo("Provoke to Royal Guard", "Replace Provoke with Royal Guard when inactive.", GNB.JobID)]
+    GunbreakerProvokeCombo = 3705,
+
+    [SectionCombo("Cooldown")]
+    [IconsCombo([GNB.RoyalGuardRemoval, UTL.ArrowLeft, ADV.Shirk])]
+    [CustomComboInfo("Shirk to Release Royal Guard", "Replace Shirk with Release Royal Guard when active.", GNB.JobID)]
+    GunbreakerShirkCombo = 3706,
 
     #endregion
     // ====================================================================================
