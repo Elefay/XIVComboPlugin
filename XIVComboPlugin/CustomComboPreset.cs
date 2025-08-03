@@ -104,15 +104,45 @@ public enum CustomComboPreset
     // ====================================================================================
     #region BARD
 
-    [IconsCombo([BRD.StraightShot, UTL.ArrowLeft, BRD.HeavyShot, UTL.Blank, BRD.Buffs.HawksEye, UTL.Checkmark])]
+    [IconsCombo([BRD.StraightShot, UTL.ArrowLeft, BRD.HeavyShot])]
     [SectionCombo("Single Target")]
-    [CustomComboInfo("Heavy Shot into Straight Shot", "Replace Heavy Shot with Straight Shot/Refulgent Arrow when available.", BRD.JobID)]
-    BardStraightShotUpgradeFeature = 2302,
+    [CustomComboInfo("Heavy Shot to Straight Shot", "Replace Heavy Shot with Straight Shot when available.", BRD.JobID)]
+    BardHeavyShotCombo = 2301,
 
-    [IconsCombo([BRD.QuickNock, UTL.ArrowLeft, BRD.WideVolley, UTL.Blank, BRD.Buffs.HawksEye, UTL.Checkmark])]
+    [IconsCombo([BRD.EmpyrealArrow, UTL.ArrowLeft, BRD.Bloodletter, UTL.ArrowLeft, BRD.Sidewinder, UTL.ArrowLeft, BRD.Bloodletter])]
+    [SectionCombo("Single Target")]
+    [CustomComboInfo("Empyreal Arrow to Sidewinder to Bloodletter", "Replace Bloodletter with Empyreal Arrow and Sidewinder as appropriate.", BRD.JobID)]
+    BardBloodletterCombo = 2302,
+
+    [IconsCombo([BRD.Windbite, UTL.ArrowLeft, BRD.VenomousBite, UTL.ArrowLeft, BRD.IronJaws])]
+    [SectionCombo("Single Target")]
+    [CustomComboInfo("Windbite to Venomous Bite to Iron Jaws", "Replace Iron Jaws with Windbite and Venomous Bite as appropriate.", BRD.JobID)]
+    BardIronJawsCombo = 2303,
+
+    [IconsCombo([BRD.WideVolley, UTL.ArrowLeft, BRD.QuickNock])]
     [SectionCombo("Area of Effect")]
-    [CustomComboInfo("Quick Nock into Wide Volley/Shadowbite", "Replace Quick Nock with Wide Volley/Shadowbite when available.", BRD.JobID)]
-    BardShadowbiteFeature = 2305,
+    [CustomComboInfo("Quick Nock to Wide Volley", "Replace Quick Nock with Wide Volley when available.", BRD.JobID)]
+    BardQuickNockCombo = 2304,
+
+    [IconsCombo([BRD.EmpyrealArrow, UTL.ArrowLeft, BRD.RainOfDeath, UTL.ArrowLeft, BRD.Sidewinder, UTL.ArrowLeft, BRD.RainOfDeath])]
+    [SectionCombo("Area of Effect")]
+    [CustomComboInfo("Empyreal Arrow to Sidewinder to Rain of Death", "Replace Bloodletter with Empyreal Arrow and Sidewinder as appropriate.", BRD.JobID)]
+    BardRainOfDeathCombo = 2305,
+    
+    [IconsCombo([BRD.RadiantEncore, UTL.ArrowLeft, BRD.BattleVoice, UTL.ArrowLeft, BRD.RadiantFinale])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Battle Voice Combo", "Replace Battle Voice with Radiant Finale when the former is on cooldown and the latter is not.", BRD.JobID)]
+    BardBattleVoiceCombo = 2306,
+
+    [IconsCombo([BRD.ResonantArrow, UTL.ArrowLeft, BRD.RagingStrikes, UTL.ArrowLeft, BRD.Barrage])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Raging Strikes Combo", "Replace Raging Strikes with Barrage when the former is on cooldown and the latter is not.", BRD.JobID)]
+    BardRagingStrikesCombo = 2307,
+
+    [IconsCombo([BRD.RepellingShot, UTL.ArrowLeft, ADV.Peloton])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Peloton to Repelling Shot", "Replace Peloton with Repelling Shot when in combat.", BRD.JobID)]
+    BardPelotonCombo = 2308,
 
     #endregion
     // ====================================================================================
@@ -222,6 +252,7 @@ public enum CustomComboPreset
     #endregion
     // ====================================================================================
     #region RED MAGE
+
     [IconsCombo([RDM.Verstone, RDM.Verfire, UTL.ArrowLeft, RDM.Jolt, UTL.Blank, RDM.Buffs.VerstoneReady, RDM.Buffs.VerfireReady, UTL.Cross])]
     [SectionCombo("Single Target")]
     [CustomComboInfo("Verstone/Verfire Feature", "Replace Verstone/Verfire with Jolt when no proc is available.", RDM.JobID)]
