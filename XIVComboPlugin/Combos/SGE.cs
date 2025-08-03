@@ -10,7 +10,9 @@ internal static class SGE
         Dosis = 24283,
         Dosis2 = 24306,
         Dosis3 = 24312,
+        Diagnosis = 24284,
         Kardia = 24285,
+        Prognosis = 24286,
         Egeiro = 24287,
         Phlegma = 24289,
         Soteria = 24294,
@@ -18,6 +20,7 @@ internal static class SGE
         Kerachole = 24298,
         Ixochole = 24299,
         Zoe = 24300,
+        Pepsis = 24301,
         Taurochole = 24303,
         Toxikon = 24304,
         Phlegma2 = 24307,
@@ -30,7 +33,9 @@ internal static class SGE
     {
         public const ushort
             Kardion = 2604,
-            Eukrasia = 2606;
+            Eukrasia = 2606,
+            EukrasianDiagnosis = 2607,
+            EukrasianPrognosis = 2609;
     }
 
     public static class Debuffs
@@ -47,6 +52,7 @@ internal static class SGE
             Kerachole = 50,
             Ixochole = 52,
             Zoe = 56,
+            Pepsis = 58,
             Taurochole = 62,
             Toxicon = 66,
             Rhizomata = 74,
@@ -111,7 +117,8 @@ internal class SageDosis : CustomCombo
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
         if ((actionID == SGE.Dosis || actionID == SGE.Dosis2 || actionID == SGE.Dosis3) &&
-            IsEnabled(CustomComboPreset.SageDosisCombo))
+            IsEnabled(CustomComboPreset.SageDosisCombo)
+        )
         {
             var gauge = GetJobGauge<SGEGauge>();
 
@@ -119,6 +126,48 @@ internal class SageDosis : CustomCombo
                 return OriginalHook(SGE.Toxikon);
 
             return OriginalHook(SGE.Dosis);
+        }
+
+        return actionID;
+    }
+}
+
+internal class SageDiagnosis : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.SgeAny;
+
+    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        if (actionID == SGE.Diagnosis && IsEnabled(CustomComboPreset.SageDiagnosisCombo))
+        {
+            if (level >= SGE.Levels.Pepsis && IsCooldownUsable(SGE.Pepsis) && (
+                HasEffect(SGE.Buffs.EukrasianDiagnosis) ||
+                HasTarget() && TargetHasEffect(SGE.Buffs.EukrasianDiagnosis)
+            ))
+                return SGE.Pepsis;
+
+            return OriginalHook(SGE.Diagnosis);
+        }
+
+        return actionID;
+    }
+}
+
+internal class SagePrognosis : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.SgeAny;
+
+    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        if (actionID == SGE.Prognosis && IsEnabled(CustomComboPreset.SagePrognosisCombo))
+        {
+            if (level >= SGE.Levels.Pepsis && IsCooldownUsable(SGE.Pepsis) && (
+                HasEffect(SGE.Buffs.EukrasianPrognosis) ||
+                HasTarget() && TargetHasEffect(SGE.Buffs.EukrasianPrognosis)
+            ))
+                return SGE.Pepsis;
+
+            return OriginalHook(SGE.Prognosis);
         }
 
         return actionID;
@@ -174,7 +223,8 @@ internal class SagePhlegma : CustomCombo
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
         if ((actionID == SGE.Phlegma || actionID == SGE.Phlegma2 || actionID == SGE.Phlegma3) &&
-            IsEnabled(CustomComboPreset.SagePhlegmaCombo))
+            IsEnabled(CustomComboPreset.SagePhlegmaCombo)
+        )
         {
             if (level >= SGE.Levels.Psyche && IsCooldownUsable(SGE.Psyche))
                 return SGE.Psyche;

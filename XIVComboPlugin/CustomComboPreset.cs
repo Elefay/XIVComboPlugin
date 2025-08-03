@@ -256,25 +256,35 @@ public enum CustomComboPreset
     [CustomComboInfo("Dosis to Toxikon", "Replace Dosis with Toxikon when moving and Addersting is not empty.", SGE.JobID)]
     SageDosisCombo = 4003,
 
+    [IconsCombo([SGE.Pepsis, UTL.ArrowLeft, SGE.Diagnosis])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Diagnosis to Pepsis", "Replace Diagnosis with Pepsis when Eukrasian Diagnosis is on target or self.", SGE.JobID)]
+    SageDiagnosisCombo = 4004,
+
+    [IconsCombo([SGE.Pepsis, UTL.ArrowLeft, SGE.Prognosis])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Prognosis to Pepsis", "Replace Prognosis with Pepsis when Eukrasian Prognosis is on target or self.", SGE.JobID)]
+    SagePrognosisCombo = 4005,
+
     [IconsCombo([ADV.Swiftcast, UTL.ArrowLeft, SGE.Egeiro])]
     [SectionCombo("Cooldown")]
     [CustomComboInfo("Egeiro to Swiftcast", "Replace Egeiro with Swiftcast when off cooldown.", SGE.JobID)]
-    SageEgeiroCombo = 4004,
+    SageEgeiroCombo = 4006,
 
     [IconsCombo([SGE.Soteria, UTL.ArrowLeft, SGE.Kardia])]
     [SectionCombo("Cooldown")]
     [CustomComboInfo("Kardia to Soteria", "Replace Kardia with Soteria when off cooldown and Kardia is applied.", SGE.JobID)]
-    SageKardiaCombo = 4005,
+    SageKardiaCombo = 4007,
 
     [IconsCombo([SGE.Psyche, UTL.ArrowLeft, SGE.Phlegma])]
     [SectionCombo("Cooldown")]
     [CustomComboInfo("Phlegma to Psyche", "Replace Phlegma with Psyche when off cooldown.", SGE.JobID)]
-    SagePhlegmaCombo = 4006,
+    SagePhlegmaCombo = 4008,
 
     [IconsCombo([SGE.Zoe, UTL.ArrowLeft, SGE.Pneuma])]
     [SectionCombo("Cooldown")]
     [CustomComboInfo("Pneuma to Zoe", "Replace Pneuma with Zoe when off cooldown.", SGE.JobID)]
-    SagePneumaCombo = 4007,
+    SagePneumaCombo = 4009,
 
     #endregion
     // ====================================================================================
