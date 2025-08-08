@@ -253,20 +253,40 @@ public enum CustomComboPreset
     // ====================================================================================
     #region RED MAGE
 
-    [IconsCombo([RDM.Verstone, RDM.Verfire, UTL.ArrowLeft, RDM.Jolt, UTL.Blank, RDM.Buffs.VerstoneReady, RDM.Buffs.VerfireReady, UTL.Cross])]
+    [IconsCombo([RDM.Verthunder, UTL.ArrowLeft, RDM.Verfire, UTL.ArrowLeft, RDM.Jolt, UTL.ArrowLeft, RDM.Reprise])]
     [SectionCombo("Single Target")]
-    [CustomComboInfo("Verstone/Verfire Feature", "Replace Verstone/Verfire with Jolt when no proc is available.", RDM.JobID)]
-    RedMageVerprocFeature = 3504,
+    [CustomComboInfo("Black Mana", "Replace Verthunder with Verfire, Jolt, and Reprise as appropriate.", RDM.JobID)]
+    RedMageVerthunderCombo = 3501,
 
-    [IconsCombo([RDM.Veraero2, RDM.Verthunder2, UTL.ArrowLeft, RDM.Impact, UTL.Blank, RDM.Buffs.Acceleration, ADV.Swiftcast, UTL.Checkmark])]
+    [IconsCombo([RDM.Veraero, UTL.ArrowLeft, RDM.Verstone, UTL.ArrowLeft, RDM.Jolt, UTL.ArrowLeft, RDM.Reprise])]
+    [SectionCombo("Single Target")]
+    [CustomComboInfo("White Mana", "Replace Veraero with Verstone, Jolt, and Reprise as appropriate.", RDM.JobID)]
+    RedMageVeraeroCombo = 3502,
+
+    [IconsCombo([RDM.Redoublement, UTL.ArrowLeft, RDM.Zwerchhau, UTL.ArrowLeft, RDM.Riposte])]
+    [SectionCombo("Single Target")]
+    [CustomComboInfo("Redoublement Combo", "Replace Redoublement with its combo chain.", RDM.JobID)]
+    RedMageRedoublementCombo = 3503,
+
+    [IconsCombo([RDM.Scatter, UTL.ArrowLeft, RDM.Verthunder2, UTL.ArrowLeft, RDM.Reprise])]
     [SectionCombo("Area of Effect")]
-    [CustomComboInfo("AoE Combo", "Replace Veraero/Verthunder 2 with Impact when various instant-cast effects are active.", RDM.JobID)]
-    RedMageAoEFeature = 3501,
+    [CustomComboInfo("Black Mana (AoE)", "Replace Verthunder II with Scatter and Reprise as appropriate.", RDM.JobID)]
+    RedMageVerthunder2Combo = 3504,
 
-    [IconsCombo([RDM.EnchantedRedoublement, RDM.Redoublement, UTL.ArrowLeft, RDM.EnchantedZwerchhau, RDM.Zwerchhau, UTL.ArrowLeft, RDM.EnchantedRiposte, RDM.Riposte])]
-    [SectionCombo("Melee features")]
-    [CustomComboInfo("Melee Combo", "Replace Redoublement with its combo chain, following enchantment rules.", RDM.JobID)]
-    RedMageMeleeCombo = 3502,
+    [IconsCombo([RDM.Scatter, UTL.ArrowLeft, RDM.Veraero2, UTL.ArrowLeft, RDM.Reprise])]
+    [SectionCombo("Area of Effect")]
+    [CustomComboInfo("White Mana (AoE)", "Replace Veraero II with Scatter and Reprise as appropriate.", RDM.JobID)]
+    RedMageVeraero2Combo = 3505,
+
+    [IconsCombo([RDM.ContreSixte, UTL.ArrowLeft, RDM.Fleche])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Fleche to Contre Sixte", "Replace Fleche with Contre Sixte when the former is on cooldown and the latter is not.", RDM.JobID)]
+    RedMageFlecheCombo = 3506,
+
+    [IconsCombo([ADV.Swiftcast, UTL.ArrowLeft, RDM.Verraise])]
+    [SectionCombo("Cooldown")]
+    [CustomComboInfo("Verraise to Swiftcast", "Replace Verraise with Swiftcast when off cooldown.", RDM.JobID)]
+    RedMageVerraiseCombo = 3507,
 
     #endregion
     // ====================================================================================
