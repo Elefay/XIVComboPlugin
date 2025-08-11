@@ -226,7 +226,9 @@ internal class SagePhlegma : CustomCombo
             IsEnabled(CustomComboPreset.SagePhlegmaCombo)
         )
         {
-            if (level >= SGE.Levels.Psyche && IsCooldownUsable(SGE.Psyche))
+            if (level >= SGE.Levels.Psyche && IsCooldownUsable(SGE.Psyche) &&
+                GetRemainingCharges(OriginalHook(SGE.Phlegma)) < GetMaxCharges(OriginalHook(SGE.Phlegma))
+            )
                 return SGE.Psyche;
 
             return OriginalHook(SGE.Phlegma);

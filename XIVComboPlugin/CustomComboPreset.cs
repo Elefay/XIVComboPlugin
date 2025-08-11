@@ -329,7 +329,7 @@ public enum CustomComboPreset
 
     [IconsCombo([SGE.Psyche, UTL.ArrowLeft, SGE.Phlegma])]
     [SectionCombo("Cooldown")]
-    [CustomComboInfo("Phlegma to Psyche", "Replace Phlegma with Psyche when off cooldown.", SGE.JobID)]
+    [CustomComboInfo("Phlegma to Psyche", "Replace Phlegma with Psyche when the former is on cooldown and the latter is not.", SGE.JobID)]
     SagePhlegmaCombo = 4008,
 
     [IconsCombo([SGE.Zoe, UTL.ArrowLeft, SGE.Pneuma])]
