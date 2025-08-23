@@ -194,11 +194,11 @@ internal class NinjaMug : CustomCombo
             if (level >= NIN.Levels.Mug && IsCooldownUsable(OriginalHook(NIN.Mug)))
                 return OriginalHook(NIN.Mug);
 
-            if (level >= NIN.Levels.TenChiJin && IsCooldownUsable(NIN.TenChiJin))
-                return NIN.TenChiJin;
-
             if (level >= NIN.Levels.Meisui && IsCooldownUsable(NIN.Meisui) && HasEffect(NIN.Buffs.ShadowWalker))
                 return NIN.Meisui;
+
+            if (level >= NIN.Levels.TenChiJin && IsCooldownUsable(NIN.TenChiJin))
+                return OriginalHook(NIN.TenChiJin);
 
             if (level >= NIN.Levels.TenriJindo && HasEffect(NIN.Buffs.TenriJindoReady))
                 return OriginalHook(NIN.TenChiJin);
