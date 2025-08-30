@@ -99,7 +99,8 @@ internal class BardBloodletter : CustomCombo
             if (level >= BRD.Levels.EmpyrealArrow && IsCooldownUsable(BRD.EmpyrealArrow))
                 return BRD.EmpyrealArrow;
 
-            if (level >= BRD.Levels.Bloodletter &&
+            if (
+                level >= BRD.Levels.Bloodletter &&
                 GetRemainingCharges(OriginalHook(BRD.Bloodletter)) == GetMaxCharges(OriginalHook(BRD.Bloodletter))
             )
                 return OriginalHook(BRD.Bloodletter);

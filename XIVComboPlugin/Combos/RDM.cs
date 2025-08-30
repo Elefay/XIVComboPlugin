@@ -56,6 +56,7 @@ internal static class RDM
             Zwerchhau = 35,
             Fleche = 45,
             Redoublement = 50,
+            ContreSixte = 56,
             Verraise = 64,
             Verflare = 68,
             Verholy = 70,
@@ -89,11 +90,14 @@ internal class RedMageVerthunder : CustomCombo
             if (level >= RDM.Levels.GrandImpact && HasEffect(RDM.Buffs.GrandImpactReady))
                 return OriginalHook(RDM.Jolt);
 
-            if (level >= RDM.Levels.Verthunder && (
-                HasEffect(RDM.Buffs.Acceleration) ||
-                HasEffect(RDM.Buffs.Dualcast) ||
-                HasEffect(ADV.Buffs.Swiftcast)
-            ))
+            if (
+                level >= RDM.Levels.Verthunder &&
+                (
+                    HasEffect(RDM.Buffs.Acceleration) ||
+                    HasEffect(RDM.Buffs.Dualcast) ||
+                    HasEffect(ADV.Buffs.Swiftcast)
+                )
+            )
                 return OriginalHook(RDM.Verthunder);
 
             if (level >= RDM.Levels.Reprise && IsMoving && Gauge.BlackMana >= 5 && Gauge.WhiteMana >= 5)
@@ -260,7 +264,7 @@ internal class RedMageFleche : CustomCombo
             if (level >= RDM.Levels.Fleche && IsCooldownUsable(RDM.Fleche))
                 return RDM.Fleche;
 
-            if (level >= RDM.Levels.Fleche && IsCooldownUsable(RDM.ContreSixte))
+            if (level >= RDM.Levels.ContreSixte && IsCooldownUsable(RDM.ContreSixte))
                 return RDM.ContreSixte;
 
             return RDM.Fleche;

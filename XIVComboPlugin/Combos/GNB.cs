@@ -88,17 +88,21 @@ internal class GunbreakerGnashingFang : CustomCombo
         {
             if (level >= GNB.Levels.Continuation)
             {
-                if (HasEffect(GNB.Buffs.ReadyToGouge))
+                if (CanUseAction(GNB.EyeGouge) && HasEffect(GNB.Buffs.ReadyToGouge))
                     return GNB.EyeGouge;
 
-                if (HasEffect(GNB.Buffs.ReadyToTear))
+                if (CanUseAction(GNB.AbdomenTear) && HasEffect(GNB.Buffs.ReadyToTear))
                     return GNB.AbdomenTear;
 
-                if (HasEffect(GNB.Buffs.ReadyToRip))
+                if (CanUseAction(GNB.JugularRip) && HasEffect(GNB.Buffs.ReadyToRip))
                     return GNB.JugularRip;
             }
 
-            if (level >= GNB.Levels.EnhancedContinuation && HasEffect(GNB.Buffs.ReadyToBlast))
+            if (
+                level >= GNB.Levels.EnhancedContinuation &&
+                CanUseAction(GNB.Hypervelocity) &&
+                HasEffect(GNB.Buffs.ReadyToBlast)
+            )
                 return GNB.Hypervelocity;
 
             if (level >= GNB.Levels.GnashingFang && (IsCooldownUsable(GNB.GnashingFang) || !IsOriginal(GNB.GnashingFang)))
@@ -137,7 +141,11 @@ internal class GunbreakerDoubleDown : CustomCombo
     {
         if (actionID == GNB.FatedCircle)
         {
-            if (level >= GNB.Levels.EnhancedContinuation2 && HasEffect(GNB.Buffs.ReadyToRaze))
+            if (
+                level >= GNB.Levels.EnhancedContinuation2 &&
+                CanUseAction(GNB.FatedBrand) &&
+                HasEffect(GNB.Buffs.ReadyToRaze)
+            )
                 return GNB.FatedBrand;
 
             if (level >= GNB.Levels.DoubleDown && IsCooldownUsable(GNB.DoubleDown))

@@ -116,7 +116,8 @@ internal class SageDosis : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if ((actionID == SGE.Dosis || actionID == SGE.Dosis2 || actionID == SGE.Dosis3) &&
+        if (
+            (actionID == SGE.Dosis || actionID == SGE.Dosis2 || actionID == SGE.Dosis3) &&
             IsEnabled(CustomComboPreset.SageDosisCombo)
         )
         {
@@ -140,10 +141,15 @@ internal class SageDiagnosis : CustomCombo
     {
         if (actionID == SGE.Diagnosis && IsEnabled(CustomComboPreset.SageDiagnosisCombo))
         {
-            if (level >= SGE.Levels.Pepsis && IsCooldownUsable(SGE.Pepsis) && (
-                HasEffect(SGE.Buffs.EukrasianDiagnosis) ||
-                HasTarget() && TargetHasEffect(SGE.Buffs.EukrasianDiagnosis)
-            ))
+            if (
+                level >= SGE.Levels.Pepsis &&
+                IsCooldownUsable(SGE.Pepsis) &&
+                CanUseAction(SGE.Pepsis) &&
+                (
+                    HasEffect(SGE.Buffs.EukrasianDiagnosis) ||
+                    HasTarget() && TargetHasEffect(SGE.Buffs.EukrasianDiagnosis)
+                )
+            )
                 return SGE.Pepsis;
 
             return OriginalHook(SGE.Diagnosis);
@@ -161,10 +167,15 @@ internal class SagePrognosis : CustomCombo
     {
         if (actionID == SGE.Prognosis && IsEnabled(CustomComboPreset.SagePrognosisCombo))
         {
-            if (level >= SGE.Levels.Pepsis && IsCooldownUsable(SGE.Pepsis) && (
-                HasEffect(SGE.Buffs.EukrasianPrognosis) ||
-                HasTarget() && TargetHasEffect(SGE.Buffs.EukrasianPrognosis)
-            ))
+            if (
+                level >= SGE.Levels.Pepsis &&
+                IsCooldownUsable(SGE.Pepsis) &&
+                CanUseAction(SGE.Pepsis) &&
+                (
+                    HasEffect(SGE.Buffs.EukrasianPrognosis) ||
+                    HasTarget() && TargetHasEffect(SGE.Buffs.EukrasianPrognosis)
+                )
+            )
                 return SGE.Pepsis;
 
             return OriginalHook(SGE.Prognosis);
@@ -226,7 +237,10 @@ internal class SagePhlegma : CustomCombo
             IsEnabled(CustomComboPreset.SagePhlegmaCombo)
         )
         {
-            if (level >= SGE.Levels.Psyche && IsCooldownUsable(SGE.Psyche) &&
+            if (
+                level >= SGE.Levels.Psyche &&
+                IsCooldownUsable(SGE.Psyche) &&
+                CanUseAction(SGE.Psyche) &&
                 GetRemainingCharges(OriginalHook(SGE.Phlegma)) < GetMaxCharges(OriginalHook(SGE.Phlegma))
             )
                 return SGE.Psyche;
@@ -246,7 +260,7 @@ internal class SagePneuma : CustomCombo
     {
         if (actionID == SGE.Pneuma && IsEnabled(CustomComboPreset.SagePneumaCombo))
         {
-            if (level >= SGE.Levels.Zoe && IsCooldownUsable(SGE.Zoe))
+            if (level >= SGE.Levels.Zoe && IsCooldownUsable(SGE.Zoe) && CanUseAction(SGE.Zoe))
                 return SGE.Zoe;
 
             if (level >= SGE.Levels.Pneuma)
