@@ -95,7 +95,8 @@ internal class RedMageVerthunder : CustomCombo
                 (
                     HasEffect(RDM.Buffs.Acceleration) ||
                     HasEffect(RDM.Buffs.Dualcast) ||
-                    HasEffect(ADV.Buffs.Swiftcast)
+                    HasEffect(ADV.Buffs.Swiftcast) ||
+                    HasEffect(ADV.Buffs.OccultQuick)
                 )
             )
                 return OriginalHook(RDM.Verthunder);
@@ -139,7 +140,8 @@ internal class RedMageVeraero : CustomCombo
             if (level >= RDM.Levels.Veraero && (
                 HasEffect(RDM.Buffs.Acceleration) ||
                 HasEffect(RDM.Buffs.Dualcast) ||
-                HasEffect(ADV.Buffs.Swiftcast)
+                HasEffect(ADV.Buffs.Swiftcast) ||
+                HasEffect(ADV.Buffs.OccultQuick)
             ))
                 return OriginalHook(RDM.Veraero);
 
@@ -199,7 +201,12 @@ internal class RedMageVerthunder2 : CustomCombo
             if (level >= RDM.Levels.GrandImpact && HasEffect(RDM.Buffs.GrandImpactReady))
                 return OriginalHook(RDM.Scatter);
 
-            if (HasEffect(RDM.Buffs.Acceleration) || HasEffect(RDM.Buffs.Dualcast) || HasEffect(ADV.Buffs.Swiftcast))
+            if (
+                HasEffect(RDM.Buffs.Acceleration) ||
+                HasEffect(RDM.Buffs.Dualcast) ||
+                HasEffect(ADV.Buffs.Swiftcast) ||
+                HasEffect(ADV.Buffs.OccultQuick)
+            )
                 return OriginalHook(RDM.Scatter);
 
             if (level >= RDM.Levels.Reprise && IsMoving && Gauge.BlackMana >= 5 && Gauge.WhiteMana >= 5)
@@ -237,7 +244,12 @@ internal class RedMageVeraero2 : CustomCombo
             if (level >= RDM.Levels.GrandImpact && HasEffect(RDM.Buffs.GrandImpactReady))
                 return OriginalHook(RDM.Scatter);
 
-            if (HasEffect(RDM.Buffs.Acceleration) || HasEffect(RDM.Buffs.Dualcast) || HasEffect(ADV.Buffs.Swiftcast))
+            if (
+                HasEffect(RDM.Buffs.Acceleration) ||
+                HasEffect(RDM.Buffs.Dualcast) ||
+                HasEffect(ADV.Buffs.Swiftcast) ||
+                HasEffect(ADV.Buffs.OccultQuick)
+            )
                 return OriginalHook(RDM.Scatter);
 
             if (level >= RDM.Levels.Reprise && IsMoving && Gauge.BlackMana >= 5 && Gauge.WhiteMana >= 5)
@@ -282,7 +294,12 @@ internal class RedMageVerraise : CustomCombo
     {
         if (actionID == RDM.Verraise && IsEnabled(CustomComboPreset.RedMageVerraiseCombo))
         {
-            if (CanUseAction(ADV.Swiftcast) && IsCooldownUsable(ADV.Swiftcast) && !HasEffect(RDM.Buffs.Dualcast))
+            if (
+                CanUseAction(ADV.Swiftcast) &&
+                IsCooldownUsable(ADV.Swiftcast) &&
+                !HasEffect(RDM.Buffs.Dualcast) &&
+                !HasEffect(ADV.Buffs.OccultQuick)
+            )
                 return ADV.Swiftcast;
 
             if (level >= RDM.Levels.Verraise)

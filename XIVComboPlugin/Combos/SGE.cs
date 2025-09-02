@@ -193,7 +193,11 @@ internal class SageEgeiro : CustomCombo
     {
         if (actionID == SGE.Egeiro && IsEnabled(CustomComboPreset.SageEgeiroCombo))
         {
-            if (CanUseAction(ADV.Swiftcast) && IsCooldownUsable(ADV.Swiftcast))
+            if (
+                CanUseAction(ADV.Swiftcast) &&
+                IsCooldownUsable(ADV.Swiftcast) &&
+                !HasEffect(ADV.Buffs.OccultQuick)
+            )
                 return ADV.Swiftcast;
 
             if (level >= SGE.Levels.Egeiro)

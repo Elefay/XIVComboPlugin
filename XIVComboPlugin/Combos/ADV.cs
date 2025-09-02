@@ -14,7 +14,8 @@ internal static class ADV
     public static class Buffs
     {
         public const ushort
-            Swiftcast = 167;
+            Swiftcast = 167,
+            OccultQuick = 4260;
     }
 
     public static class Debuffs
