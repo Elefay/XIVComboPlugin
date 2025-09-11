@@ -123,7 +123,13 @@ internal class SageDosis : CustomCombo
         {
             var gauge = GetJobGauge<SGEGauge>();
 
-            if (level >= SGE.Levels.Toxicon && gauge.Addersting > 0 && IsMoving && !HasEffect(SGE.Buffs.Eukrasia))
+            if (
+                level >= SGE.Levels.Toxicon &&
+                gauge.Addersting > 0 &&
+                IsMoving &&
+                !HasEffect(SGE.Buffs.Eukrasia) &&
+                !HasEffect(ADV.Buffs.OccultQuick)
+            )
                 return OriginalHook(SGE.Toxikon);
 
             return OriginalHook(SGE.Dosis);
