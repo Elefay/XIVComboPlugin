@@ -219,7 +219,10 @@ internal class NinjaTrickAttack : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if ((actionID == NIN.TrickAttack || actionID == NIN.KunaisBane) && IsEnabled(CustomComboPreset.NinjaTrickAttackCombo))
+        if (
+            (actionID == NIN.TrickAttack || actionID == NIN.KunaisBane) &&
+            IsEnabled(CustomComboPreset.NinjaTrickAttackCombo)
+        )
         {
             if (level >= NIN.Levels.Kassatsu && IsCooldownUsable(NIN.Kassatsu))
                 return NIN.Kassatsu;

@@ -73,7 +73,10 @@ internal class RedMageVerthunder : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if ((actionID == RDM.Verthunder || actionID == RDM.Verthunder3) && IsEnabled(CustomComboPreset.RedMageVerthunderCombo))
+        if (
+            (actionID == RDM.Verthunder || actionID == RDM.Verthunder3) &&
+            IsEnabled(CustomComboPreset.RedMageVerthunderCombo)
+        )
         {
             var BuffVerfireReady = FindEffect(RDM.Buffs.VerfireReady);
             var Gauge = GetJobGauge<RDMGauge>();
@@ -81,7 +84,10 @@ internal class RedMageVerthunder : CustomCombo
             if (level >= RDM.Levels.Resolution && lastComboMove == RDM.Scorch)
                 return OriginalHook(RDM.Jolt);
 
-            if (level >= RDM.Levels.Scorch && (lastComboMove == RDM.Verflare || lastComboMove == RDM.Verholy))
+            if (
+                level >= RDM.Levels.Scorch &&
+                (lastComboMove == RDM.Verflare || lastComboMove == RDM.Verholy)
+            )
                 return OriginalHook(RDM.Jolt);
 
             if (level >= RDM.Levels.Verflare && Gauge.ManaStacks == 3)
@@ -101,7 +107,12 @@ internal class RedMageVerthunder : CustomCombo
             )
                 return OriginalHook(RDM.Verthunder);
 
-            if (level >= RDM.Levels.Reprise && IsMoving && Gauge.BlackMana >= 5 && Gauge.WhiteMana >= 5)
+            if (
+                level >= RDM.Levels.Reprise &&
+                IsMoving &&
+                Gauge.BlackMana >= 5 &&
+                Gauge.WhiteMana >= 5
+            )
                 return OriginalHook(RDM.Reprise);
 
             if (level >= RDM.Levels.Verfire && BuffVerfireReady?.RemainingTime >= 2.5)
@@ -120,7 +131,10 @@ internal class RedMageVeraero : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if ((actionID == RDM.Veraero || actionID == RDM.Veraero3) && IsEnabled(CustomComboPreset.RedMageVeraeroCombo))
+        if (
+            (actionID == RDM.Veraero || actionID == RDM.Veraero3) &&
+            IsEnabled(CustomComboPreset.RedMageVeraeroCombo)
+        )
         {
             var BuffVerstoneReady = FindEffect(RDM.Buffs.VerstoneReady);
             var Gauge = GetJobGauge<RDMGauge>();
@@ -128,7 +142,10 @@ internal class RedMageVeraero : CustomCombo
             if (level >= RDM.Levels.Resolution && lastComboMove == RDM.Scorch)
                 return OriginalHook(RDM.Jolt);
 
-            if (level >= RDM.Levels.Scorch && (lastComboMove == RDM.Verflare || lastComboMove == RDM.Verholy))
+            if (
+                level >= RDM.Levels.Scorch &&
+                (lastComboMove == RDM.Verflare || lastComboMove == RDM.Verholy)
+            )
                 return OriginalHook(RDM.Jolt);
 
             if (level >= RDM.Levels.Verholy && Gauge.ManaStacks == 3)
@@ -145,7 +162,12 @@ internal class RedMageVeraero : CustomCombo
             ))
                 return OriginalHook(RDM.Veraero);
 
-            if (level >= RDM.Levels.Reprise && IsMoving && Gauge.BlackMana >= 5 && Gauge.WhiteMana >= 5)
+            if (
+                level >= RDM.Levels.Reprise &&
+                IsMoving &&
+                Gauge.BlackMana >= 5 &&
+                Gauge.WhiteMana >= 5
+            )
                 return OriginalHook(RDM.Reprise);
 
             if (level >= RDM.Levels.Verstone && BuffVerstoneReady?.RemainingTime >= 2.5)
@@ -192,7 +214,10 @@ internal class RedMageVerthunder2 : CustomCombo
             if (level >= RDM.Levels.Resolution && lastComboMove == RDM.Scorch)
                 return OriginalHook(RDM.Scatter);
 
-            if (level >= RDM.Levels.Scorch && (lastComboMove == RDM.Verflare || lastComboMove == RDM.Verholy))
+            if (
+                level >= RDM.Levels.Scorch &&
+                (lastComboMove == RDM.Verflare || lastComboMove == RDM.Verholy)
+            )
                 return OriginalHook(RDM.Scatter);
 
             if (level >= RDM.Levels.Verflare && Gauge.ManaStacks == 3)
@@ -209,7 +234,12 @@ internal class RedMageVerthunder2 : CustomCombo
             )
                 return OriginalHook(RDM.Scatter);
 
-            if (level >= RDM.Levels.Reprise && IsMoving && Gauge.BlackMana >= 5 && Gauge.WhiteMana >= 5)
+            if (
+                level >= RDM.Levels.Reprise &&
+                IsMoving &&
+                Gauge.BlackMana >= 5 &&
+                Gauge.WhiteMana >= 5
+            )
                 return OriginalHook(RDM.Reprise);
 
             if (level >= RDM.Levels.Verthunder2)
@@ -235,7 +265,10 @@ internal class RedMageVeraero2 : CustomCombo
             if (level >= RDM.Levels.Resolution && lastComboMove == RDM.Scorch)
                 return OriginalHook(RDM.Scatter);
 
-            if (level >= RDM.Levels.Scorch && (lastComboMove == RDM.Verflare || lastComboMove == RDM.Verholy))
+            if (
+                level >= RDM.Levels.Scorch &&
+                (lastComboMove == RDM.Verflare || lastComboMove == RDM.Verholy)
+            )
                 return OriginalHook(RDM.Scatter);
 
             if (level >= RDM.Levels.Verholy && Gauge.ManaStacks == 3)
@@ -252,7 +285,12 @@ internal class RedMageVeraero2 : CustomCombo
             )
                 return OriginalHook(RDM.Scatter);
 
-            if (level >= RDM.Levels.Reprise && IsMoving && Gauge.BlackMana >= 5 && Gauge.WhiteMana >= 5)
+            if (
+                level >= RDM.Levels.Reprise &&
+                IsMoving &&
+                Gauge.BlackMana >= 5 &&
+                Gauge.WhiteMana >= 5
+            )
                 return OriginalHook(RDM.Reprise);
 
             if (level >= RDM.Levels.Veraero2)

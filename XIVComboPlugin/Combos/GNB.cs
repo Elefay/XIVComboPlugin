@@ -56,11 +56,11 @@ internal static class GNB
 
 internal class GunbreakerSolidBarrel : CustomCombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GunbreakerSolidBarrelCombo;
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GnbAny;
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == GNB.SolidBarrel)
+        if (actionID == GNB.SolidBarrel && IsEnabled(CustomComboPreset.GunbreakerSolidBarrelCombo))
         {
             if (comboTime > 0)
             {
@@ -80,11 +80,11 @@ internal class GunbreakerSolidBarrel : CustomCombo
 
 internal class GunbreakerGnashingFang : CustomCombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GunbreakerGnashingFangCombo;
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GnbAny;
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == GNB.BurstStrike)
+        if (actionID == GNB.BurstStrike && IsEnabled(CustomComboPreset.GunbreakerGnashingFangCombo))
         {
             if (level >= GNB.Levels.Continuation)
             {
@@ -105,7 +105,10 @@ internal class GunbreakerGnashingFang : CustomCombo
             )
                 return GNB.Hypervelocity;
 
-            if (level >= GNB.Levels.GnashingFang && (IsCooldownUsable(GNB.GnashingFang) || !IsOriginal(GNB.GnashingFang)))
+            if (
+                level >= GNB.Levels.GnashingFang &&
+                (IsCooldownUsable(GNB.GnashingFang) || !IsOriginal(GNB.GnashingFang))
+            )
                 return OriginalHook(GNB.GnashingFang);
 
             return GNB.BurstStrike;
@@ -117,11 +120,11 @@ internal class GunbreakerGnashingFang : CustomCombo
 
 internal class GunbreakerDemonSlaughter : CustomCombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GunbreakerDemonSlaughterCombo;
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GnbAny;
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == GNB.DemonSlaughter)
+        if (actionID == GNB.DemonSlaughter && IsEnabled(CustomComboPreset.GunbreakerDemonSlaughterCombo))
         {
             if (comboTime > 0 && lastComboMove == GNB.DemonSlice && level >= GNB.Levels.DemonSlaughter)
                 return GNB.DemonSlaughter;
@@ -135,11 +138,11 @@ internal class GunbreakerDemonSlaughter : CustomCombo
 
 internal class GunbreakerDoubleDown : CustomCombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GunbreakerDoubleDownCombo;
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GnbAny;
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == GNB.FatedCircle)
+        if (actionID == GNB.FatedCircle && IsEnabled(CustomComboPreset.GunbreakerDoubleDownCombo))
         {
             if (
                 level >= GNB.Levels.EnhancedContinuation2 &&
@@ -160,11 +163,11 @@ internal class GunbreakerDoubleDown : CustomCombo
 
 internal class GunbreakerProvoke : CustomCombo
 {
-    protected internal override CustomComboPreset Preset => CustomComboPreset.GunbreakerProvokeCombo;
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GnbAny;
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == ADV.Provoke)
+        if (actionID == ADV.Provoke && IsEnabled(CustomComboPreset.GunbreakerProvokeCombo))
         {
             if (level >= GNB.Levels.RoyalGuard && !HasEffect(GNB.Buffs.RoyalGuard))
                 return GNB.RoyalGuard;
@@ -178,11 +181,11 @@ internal class GunbreakerProvoke : CustomCombo
 
 internal class GunbreakerShirk : CustomCombo
 {
-    protected internal override CustomComboPreset Preset => CustomComboPreset.GunbreakerShirkCombo;
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GnbAny;
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (actionID == ADV.Shirk)
+        if (actionID == ADV.Shirk && IsEnabled(CustomComboPreset.GunbreakerShirkCombo))
         {
             if (level >= GNB.Levels.RoyalGuard && HasEffect(GNB.Buffs.RoyalGuard))
                 return GNB.RoyalGuardRemoval;

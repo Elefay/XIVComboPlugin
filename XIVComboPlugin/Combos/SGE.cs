@@ -227,7 +227,11 @@ internal class SageKardia : CustomCombo
     {
         if (actionID == SGE.Kardia && IsEnabled(CustomComboPreset.SageKardiaCombo))
         {
-            if (level >= SGE.Levels.Soteria && HasEffect(SGE.Buffs.Kardion) && IsCooldownUsable(SGE.Soteria))
+            if (
+                level >= SGE.Levels.Soteria &&
+                HasEffect(SGE.Buffs.Kardion) &&
+                IsCooldownUsable(SGE.Soteria)
+            )
                 return SGE.Soteria;
 
             return SGE.Kardia;

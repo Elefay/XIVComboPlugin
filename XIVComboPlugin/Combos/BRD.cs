@@ -76,9 +76,15 @@ internal class BardHeavyShot : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if ((actionID == BRD.HeavyShot || actionID == BRD.BurstShot) && IsEnabled(CustomComboPreset.BardHeavyShotCombo))
+        if (
+            (actionID == BRD.HeavyShot || actionID == BRD.BurstShot) &&
+            IsEnabled(CustomComboPreset.BardHeavyShotCombo)
+        )
         {
-            if (level >= BRD.Levels.StraightShot && (HasEffect(BRD.Buffs.HawksEye) || HasEffect(BRD.Buffs.Barrage)))
+            if (
+                level >= BRD.Levels.StraightShot &&
+                (HasEffect(BRD.Buffs.HawksEye) || HasEffect(BRD.Buffs.Barrage))
+            )
                 return OriginalHook(BRD.StraightShot);
 
             return OriginalHook(BRD.HeavyShot);
@@ -94,7 +100,10 @@ internal class BardBloodletter : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if ((actionID == BRD.Bloodletter || actionID == BRD.HeartbreakShot) && IsEnabled(CustomComboPreset.BardBloodletterCombo))
+        if (
+            (actionID == BRD.Bloodletter || actionID == BRD.HeartbreakShot)
+            && IsEnabled(CustomComboPreset.BardBloodletterCombo)
+        )
         {
             if (level >= BRD.Levels.EmpyrealArrow && IsCooldownUsable(BRD.EmpyrealArrow))
                 return BRD.EmpyrealArrow;
@@ -145,7 +154,10 @@ internal class BardIronJaws : CustomCombo
                 if (level >= BRD.Levels.IronJaws)
                     return BRD.IronJaws;
 
-                if (level >= BRD.Levels.Windbite && DebuffWindbite?.RemainingTime < DebuffVenomousBite?.RemainingTime)
+                if (
+                    level >= BRD.Levels.Windbite &&
+                    DebuffWindbite?.RemainingTime < DebuffVenomousBite?.RemainingTime
+                )
                     return BRD.Windbite;
 
                 if (level >= BRD.Levels.VenomousBite)
@@ -165,9 +177,15 @@ internal class BardQuickNock : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if ((actionID == BRD.QuickNock || actionID == BRD.Ladonsbite) && IsEnabled(CustomComboPreset.BardQuickNockCombo))
+        if (
+            (actionID == BRD.QuickNock || actionID == BRD.Ladonsbite) &&
+            IsEnabled(CustomComboPreset.BardQuickNockCombo)
+        )
         {
-            if (level >= BRD.Levels.WideVolley && (HasEffect(BRD.Buffs.HawksEye) || HasEffect(BRD.Buffs.Barrage)))
+            if (
+                level >= BRD.Levels.WideVolley &&
+                (HasEffect(BRD.Buffs.HawksEye) || HasEffect(BRD.Buffs.Barrage))
+            )
                 return OriginalHook(BRD.WideVolley);
 
             return OriginalHook(BRD.QuickNock);
