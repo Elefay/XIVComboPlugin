@@ -224,15 +224,20 @@ internal class NinjaTrickAttack : CustomCombo
             IsEnabled(CustomComboPreset.NinjaTrickAttackCombo)
         )
         {
+            if (
+                level >= NIN.Levels.TrickAttack &&
+                IsCooldownUsable(OriginalHook(NIN.TrickAttack)) &&
+                HasEffect(NIN.Buffs.Hidden)
+            )
+                return OriginalHook(NIN.TrickAttack);
+
             if (level >= NIN.Levels.Kassatsu && IsCooldownUsable(NIN.Kassatsu))
                 return NIN.Kassatsu;
 
             if (
-                level >= NIN.Levels.TrickAttack && IsCooldownUsable(OriginalHook(NIN.TrickAttack)) &&
-                (
-                    (level >= NIN.Levels.Hide && HasEffect(NIN.Buffs.Hidden)) ||
-                    (level >= NIN.Levels.Suiton && HasEffect(NIN.Buffs.ShadowWalker))
-                )
+                level >= NIN.Levels.TrickAttack &&
+                IsCooldownUsable(OriginalHook(NIN.TrickAttack)) &&
+                HasEffect(NIN.Buffs.ShadowWalker)
             )
                 return OriginalHook(NIN.TrickAttack);
 
