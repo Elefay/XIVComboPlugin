@@ -15,6 +15,7 @@ internal static class ADV
     {
         public const ushort
             Swiftcast = 167,
+            LostChainspell = 2560,
             OccultQuick = 4260;
     }
 

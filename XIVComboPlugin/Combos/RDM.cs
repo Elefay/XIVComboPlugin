@@ -102,6 +102,7 @@ internal class RedMageVerthunder : CustomCombo
                     HasEffect(RDM.Buffs.Acceleration) ||
                     HasEffect(RDM.Buffs.Dualcast) ||
                     HasEffect(ADV.Buffs.Swiftcast) ||
+                    HasEffect(ADV.Buffs.LostChainspell) ||
                     HasEffect(ADV.Buffs.OccultQuick)
                 )
             )
@@ -158,6 +159,7 @@ internal class RedMageVeraero : CustomCombo
                 HasEffect(RDM.Buffs.Acceleration) ||
                 HasEffect(RDM.Buffs.Dualcast) ||
                 HasEffect(ADV.Buffs.Swiftcast) ||
+                HasEffect(ADV.Buffs.LostChainspell) ||
                 HasEffect(ADV.Buffs.OccultQuick)
             ))
                 return OriginalHook(RDM.Veraero);
@@ -230,6 +232,7 @@ internal class RedMageVerthunder2 : CustomCombo
                 HasEffect(RDM.Buffs.Acceleration) ||
                 HasEffect(RDM.Buffs.Dualcast) ||
                 HasEffect(ADV.Buffs.Swiftcast) ||
+                HasEffect(ADV.Buffs.LostChainspell) ||
                 HasEffect(ADV.Buffs.OccultQuick)
             )
                 return OriginalHook(RDM.Scatter);
@@ -281,6 +284,7 @@ internal class RedMageVeraero2 : CustomCombo
                 HasEffect(RDM.Buffs.Acceleration) ||
                 HasEffect(RDM.Buffs.Dualcast) ||
                 HasEffect(ADV.Buffs.Swiftcast) ||
+                HasEffect(ADV.Buffs.LostChainspell) ||
                 HasEffect(ADV.Buffs.OccultQuick)
             )
                 return OriginalHook(RDM.Scatter);
@@ -336,6 +340,7 @@ internal class RedMageVerraise : CustomCombo
                 CanUseAction(ADV.Swiftcast) &&
                 IsCooldownUsable(ADV.Swiftcast) &&
                 !HasEffect(RDM.Buffs.Dualcast) &&
+                !HasEffect(ADV.Buffs.LostChainspell) &&
                 !HasEffect(ADV.Buffs.OccultQuick)
             )
                 return ADV.Swiftcast;
