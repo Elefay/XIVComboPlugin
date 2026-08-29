@@ -128,6 +128,7 @@ internal class SageDosis : CustomCombo
                 gauge.Addersting > 0 &&
                 IsMoving &&
                 !HasEffect(SGE.Buffs.Eukrasia) &&
+                !HasEffect(RDM.Buffs.Dualcast) && // OC
                 !HasEffect(ADV.Buffs.LostChainspell) &&
                 !HasEffect(ADV.Buffs.OccultQuick)
             )
@@ -203,6 +204,7 @@ internal class SageEgeiro : CustomCombo
             if (
                 CanUseAction(ADV.Swiftcast) &&
                 IsCooldownUsable(ADV.Swiftcast) &&
+                !HasEffect(RDM.Buffs.Dualcast) && // OC
                 !HasEffect(ADV.Buffs.LostChainspell) &&
                 !HasEffect(ADV.Buffs.OccultQuick)
             )
